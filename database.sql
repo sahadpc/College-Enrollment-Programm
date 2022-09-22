@@ -10,6 +10,7 @@ mobileNumber varchar(50),
 Userpassword varchar(30)
 );
 create table address( 
+address_id int primary key,
 userId int,
 city varchar(30),
 state varchar(30),
@@ -17,6 +18,7 @@ pincode varchar(6),
 constraint foreign key (userId) references user(userId)
 );
 create table studentMarks (
+marks_id int primary key,
 userId int,
 sscMarks double,
 constraint foreign key(userId) references user(userId)
