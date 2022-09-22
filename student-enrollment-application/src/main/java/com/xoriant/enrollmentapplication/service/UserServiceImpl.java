@@ -1,0 +1,77 @@
+package com.xoriant.enrollmentapplication.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.xoriant.enrollmentapplication.Repository.UserDao;
+import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
+import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
+import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
+import com.xoriant.enrollmentapplication.entities.Address;
+import com.xoriant.enrollmentapplication.entities.StudentMarks;
+import com.xoriant.enrollmentapplication.entities.User;
+
+@Component
+@Transactional
+public class UserServiceImpl implements UserService {
+	
+	@Autowired
+	private UserDao userDao;
+	
+	/*
+	 * @Autowired private User userEntity;
+	 * 
+	 * @Autowired private UserResponse userResponse;
+	 * 
+	 * 
+	 * private Address addressEntity;
+	 */
+	@Override
+	public List<User> findAllUsers() {
+		return userDao.findAll();
+	}
+
+	@Override
+	public UserResponse register(UserRequest userRequest) {
+		if(userRequest!=null)
+		{
+			
+			List<Address> addresslist= new ArrayList<Address>();
+			User userEntity = new User();
+			userEntity.setFirstName(userRequest.getFirstName());
+			userEntity.setMiddleName(userRequest.getMiddleName());
+			userEntity.setLastName(userRequest.getLastName());
+			userEntity.setMobileNumber(userRequest.getMobileNumber());
+			Address addressEntity = new Address();
+			for (AddressRequest address : userRequest.getAddress()) 
+			{
+				addressEntity.setCity(address.getCity());
+				addressEntity.setState(address.getState());
+				addressEntity.setPincode(address.getPincode());
+				addresslist.add(addressEntity);
+			}
+			userEntity.setAddress(addresslist);
+			userEntity.setUserPassword(userRequest.getUserPassword());
+			userEntity.setEmailId(userRequest.getEmailId());
+			StudentMarks studentmarksEntity = new StudentMarks();
+			studentmarksEntity.setSscMarks(userRequest.getStudentMarks().getSscMarks());;
+			userEntity.setStudentMarks(studentmarksEntity);
+			userDao.save(userEntity);
+			UserResponse userResponse = new UserResponse();
+			userResponse.setUserId(userEntity.getUserId());
+			userResponse.setFirstName(userEntity.getFirstName());
+			userResponse.setMiddleName(userEntity.getMiddleName());
+			userResponse.setLastName(userEntity.getLastName());
+			userResponse.setUserPassword(userEntity.getUserPassword());
+			userResponse.setEmailId(userEntity.getEmailId());
+			return userResponse;
+
+		}
+		return null;
+	}
+}
