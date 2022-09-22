@@ -12,7 +12,7 @@ public class StudentMarks {
 	@Id
 	@GeneratedValue
 	private int marksId;
-	@OneToOne(mappedBy = "studentmarks")/* (cascade = CascadeType.ALL,fetch = FetchType.EAGER) */
+	@OneToOne//(mappedBy = "studentmarks")/*(cascade = CascadeType.ALL,fetch = FetchType.EAGER) */
 	@JoinColumn(name="userId",referencedColumnName = "userId")
 	private User userId;
 	

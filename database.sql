@@ -1,25 +1,25 @@
 create database studentCourses;
 use studentCourses;
 create table user(
-userId int primary key,
-firstname varchar(20),
-middlename varchar(10),
-lastname varchar(20),
-emailid varchar(50),
-mobileNumber varchar(50),
-Userpassword varchar(30)
+user_id int primary key,
+first_name varchar(20),
+middle_name varchar(10),
+last_name varchar(20),
+email_id varchar(50),
+mobile_number varchar(50),
+user_password varchar(30)
 );
 create table address( 
 address_id int primary key,
-userId int,
+user_id int,
 city varchar(30),
 state varchar(30),
 pincode varchar(6),
-constraint foreign key (userId) references user(userId)
+constraint foreign key (user_id) references user(user_id)
 );
-create table studentMarks (
+create table studentmarks (
 marks_id int primary key,
-userId int,
-sscMarks double,
-constraint foreign key(userId) references user(userId)
+user_id int,
+ssc_marks double,
+constraint foreign key(user_id) references user(user_id)
 );

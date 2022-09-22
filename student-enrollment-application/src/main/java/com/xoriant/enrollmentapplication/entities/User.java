@@ -26,7 +26,7 @@ public class User {
 	private String userPassword;
 
 	@OneToOne  (cascade = CascadeType.ALL) 
-	@JoinColumn(name = "marks_id", referencedColumnName = "marksId")
+	@JoinColumn(name = "userId", referencedColumnName = "userId")
 	private StudentMarks studentMarks;
 
 	@OneToMany (cascade = CascadeType.ALL) 
