@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 
 @Entity(name = "user")
 public class User {
@@ -25,8 +26,9 @@ public class User {
 	private String emailId;
 	private String userPassword;
 
-	@OneToOne  (cascade = CascadeType.ALL) 
-	@JoinColumn(name = "userId", referencedColumnName = "userId")
+	@OneToOne(cascade = CascadeType.ALL) 
+	@JoinColumn(name = "marks_id", referencedColumnName = "marksId")
+	//@PrimaryKeyJoinColumn
 	private StudentMarks studentMarks;
 
 	@OneToMany (cascade = CascadeType.ALL) 

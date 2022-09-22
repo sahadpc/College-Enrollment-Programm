@@ -7,7 +7,9 @@ middle_name varchar(10),
 last_name varchar(20),
 email_id varchar(50),
 mobile_number varchar(50),
-user_password varchar(30)
+user_password varchar(30),
+marks_id int ,
+constraint foreign key (marks_id) references user(marks_id)
 );
 create table address( 
 address_id int primary key,
@@ -19,7 +21,5 @@ constraint foreign key (user_id) references user(user_id)
 );
 create table studentmarks (
 marks_id int primary key,
-user_id int,
-ssc_marks double,
-constraint foreign key(user_id) references user(user_id)
+ssc_marks double
 );
