@@ -38,39 +38,56 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserResponse register(UserRequest userRequest) {
 		if(userRequest!=null)
-		{
-			
-			List<Address> addresslist= new ArrayList<Address>();
-			User userEntity = new User();
-			userEntity.setFirstName(userRequest.getFirstName());
-			userEntity.setMiddleName(userRequest.getMiddleName());
-			userEntity.setLastName(userRequest.getLastName());
-			userEntity.setMobileNumber(userRequest.getMobileNumber());
-			Address addressEntity = new Address();
-			for (AddressRequest address : userRequest.getAddress()) 
-			{
-				addressEntity.setCity(address.getCity());
-				addressEntity.setState(address.getState());
-				addressEntity.setPincode(address.getPincode());
-				addresslist.add(addressEntity);
-			}
-			userEntity.setAddress(addresslist);
-			userEntity.setUserPassword(userRequest.getUserPassword());
-			userEntity.setEmailId(userRequest.getEmailId());
-			StudentMarks studentmarksEntity = new StudentMarks();
-			studentmarksEntity.setSscMarks(userRequest.getStudentMarks().getSscMarks());;
-			userEntity.setStudentMarks(studentmarksEntity);
+		{   
+			User userEntity;
+			UserResponse userResponse;
+			userEntity = getUserEntity(userRequest);
 			userDao.save(userEntity);
-			UserResponse userResponse = new UserResponse();
-			userResponse.setUserId(userEntity.getUserId());
-			userResponse.setFirstName(userEntity.getFirstName());
-			userResponse.setMiddleName(userEntity.getMiddleName());
-			userResponse.setLastName(userEntity.getLastName());
-			userResponse.setUserPassword(userEntity.getUserPassword());
-			userResponse.setEmailId(userEntity.getEmailId());
+			userResponse = getUserResponse(userEntity);
 			return userResponse;
-
 		}
 		return null;
+	}
+
+	private UserResponse getUserResponse(User userEntity) {
+		
+		UserResponse userResponse = new UserResponse();
+		userResponse = getUserResponse(userEntity);
+		userResponse.setUserId(userEntity.getUserId());
+		userResponse.setFirstName(userEntity.getFirstName());
+		userResponse.setMiddleName(userEntity.getMiddleName());
+		userResponse.setLastName(userEntity.getLastName());
+		userResponse.setUserPassword(userEntity.getUserPassword());
+		userResponse.setEmailId(userEntity.getEmailId());
+		return userResponse;
+	}
+
+	private User getUserEntity(UserRequest userRequest) {
+		
+		User userEntity = new User();
+		userEntity.setFirstName(userRequest.getFirstName());
+		userEntity.setMiddleName(userRequest.getMiddleName());
+		userEntity.setLastName(userRequest.getLastName());
+		userEntity.setMobileNumber(userRequest.getMobileNumber());
+		userEntity.setAddress(getAddressEntity(userRequest.getAddress()));
+		userEntity.setUserPassword(userRequest.getUserPassword());
+		userEntity.setEmailId(userRequest.getEmailId());
+		StudentMarks studentmarksEntity = new StudentMarks();
+		studentmarksEntity.setSscMarks(userRequest.getStudentMarks().getSscMarks());;
+		userEntity.setStudentMarks(studentmarksEntity);
+		return userEntity;
+	}
+
+	private List<Address> getAddressEntity(List<AddressRequest> addressRequestlist) {
+		List<Address> addresslist= new ArrayList<Address>();
+		Address addressEntity = new Address();
+		for (AddressRequest address : addressRequestlist) 
+		{
+			addressEntity.setCity(address.getCity());
+			addressEntity.setState(address.getState());
+			addressEntity.setPincode(address.getPincode());
+			addresslist.add(addressEntity);
+		}
+		return addresslist;
 	}
 }
