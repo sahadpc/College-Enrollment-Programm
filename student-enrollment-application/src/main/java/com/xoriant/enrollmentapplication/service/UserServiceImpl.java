@@ -22,21 +22,23 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserDao userDao;
-	/*
-	 * @Autowired private User userEntity;
-	 * 
-	 * @Autowired private UserResponse userResponse;
-	 * 
-	 * 
-	 * private Address addressEntity;
-	 */
+	
 	@Override
-	public List<User> findAllUsers() {
-		return userDao.findAll();
+	public String login(String email, String password) 
+	{
+		String message = "Invalid userName or Password!";
+	    User user = userDao.findByEmailId(email);
+		if (user!=null) {
+			if (user.getUserPassword().equals(password) && user.getEmailId().equals(email)) {
+				message="Login Successful";
+			}
+		}
+		return message;
 	}
 
 	@Override
-	public UserResponse register(UserRequest userRequest) {
+	public UserResponse register(UserRequest userRequest) 
+	{
 		if(userRequest!=null)
 		{   
 			User userEntity;
@@ -48,20 +50,16 @@ public class UserServiceImpl implements UserService {
 		}
 		return null;
 	}
-
 	private UserResponse getUserResponse(User userEntity) {
 		
 		UserResponse userResponse = new UserResponse();
-		userResponse = getUserResponse(userEntity);
 		userResponse.setUserId(userEntity.getUserId());
 		userResponse.setFirstName(userEntity.getFirstName());
 		userResponse.setMiddleName(userEntity.getMiddleName());
 		userResponse.setLastName(userEntity.getLastName());
-		userResponse.setUserPassword(userEntity.getUserPassword());
 		userResponse.setEmailId(userEntity.getEmailId());
 		return userResponse;
 	}
-
 	private User getUserEntity(UserRequest userRequest) {
 		
 		User userEntity = new User();
@@ -77,7 +75,6 @@ public class UserServiceImpl implements UserService {
 		userEntity.setStudentMarks(studentmarksEntity);
 		return userEntity;
 	}
-
 	private List<Address> getAddressEntity(List<AddressRequest> addressRequestlist) {
 		List<Address> addresslist= new ArrayList<Address>();
 		Address addressEntity = new Address();

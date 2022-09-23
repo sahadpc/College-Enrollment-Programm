@@ -38,7 +38,6 @@ public class User {
 	public List<Address> getAddress() {
 		return address;
 	}
-
 	public void setAddress(List<Address> address) {
 		this.address = address;
 	}
