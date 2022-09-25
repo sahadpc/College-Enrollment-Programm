@@ -1,6 +1,7 @@
 package com.xoriant.enrollmentapplication.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +19,7 @@ import com.xoriant.enrollmentapplication.service.UserService;
 @RestController
 @RequestMapping("/api")
 public class StudentEnrollmentResource {
-	
+
 	@Autowired
 	private UserService userService; 
 	

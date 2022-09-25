@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.xoriant.enrollmentapplication.Repository.UserDao;
 import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
 import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
+import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
 import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
 import com.xoriant.enrollmentapplication.entities.Address;
 import com.xoriant.enrollmentapplication.entities.StudentMarks;
@@ -58,8 +59,22 @@ public class UserServiceImpl implements UserService {
 		userResponse.setMiddleName(userEntity.getMiddleName());
 		userResponse.setLastName(userEntity.getLastName());
 		userResponse.setEmailId(userEntity.getEmailId());
+		userResponse.setAddress(getAddressResponse(userEntity.getAddress()));
 		return userResponse;
 	}
+	private List<AddressResponse> getAddressResponse(List<Address> addressResponselist) {
+		List<AddressResponse> addresslist= new ArrayList<AddressResponse>();
+		AddressResponse addressResponse = new AddressResponse();
+		for (Address address : addressResponselist) 
+		{
+			addressResponse.setCity(address.getCity());
+			addressResponse.setState(address.getState());
+			addressResponse.setPincode(address.getPincode());
+			addresslist.add(addressResponse);
+		}
+		return addresslist;
+	}
+
 	private User getUserEntity(UserRequest userRequest) {
 		
 		User userEntity = new User();
