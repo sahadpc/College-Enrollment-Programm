@@ -2,6 +2,7 @@ package com.xoriant.enrollmentapplication.ResponseEntities;
 
 
 public class AddressResponse {
+	
 	private int addressId;
 	private String city;
 	private String state;
