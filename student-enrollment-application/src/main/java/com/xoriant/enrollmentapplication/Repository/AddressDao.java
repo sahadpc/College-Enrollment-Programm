@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.xoriant.enrollmentapplication.entities.Address;
 @Repository
 public interface AddressDao extends JpaRepository<Address, Integer>{
-
+	
 }

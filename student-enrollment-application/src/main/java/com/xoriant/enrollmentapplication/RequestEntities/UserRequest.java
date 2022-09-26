@@ -2,7 +2,6 @@ package com.xoriant.enrollmentapplication.RequestEntities;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.xoriant.enrollmentapplication.entities.StudentMarks;
 
 public class UserRequest {
 	
