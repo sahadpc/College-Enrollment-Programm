@@ -1,5 +1,7 @@
 package com.xoriant.enrollmentapplication.service;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,18 +58,6 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
-	public UserResponse update(UserRequest userRequest, int userId) {
-		User user = userDao.findById(userId).orElse(null);
-		if (user != null) {
-			UserResponse userResponse;
-			user = getUpdatedUserEntity(userRequest, user);
-			userDao.save(user);
-			userResponse = getUserResponse(user);
-			return userResponse;
-		}
-		return null;
-	}
-
 	private UserResponse getUserResponse(User userEntity) {
 
 		UserResponse userResponse = new UserResponse();
@@ -102,11 +92,34 @@ public class UserServiceImpl implements UserService {
 		userEntity.setMobileNumber(userRequest.getMobileNumber());
 		userEntity.setAddress(getAddressEntity(userRequest.getAddress()));
 		
-		userEntity.setUserPassword(userRequest.getUserPassword());
+		userEntity.setUserPassword(hashPassword(userRequest.getUserPassword()));
 		userEntity.setEmailId(userRequest.getEmailId());
 		studentmarksEntity.setSscMarks(userRequest.getStudentMarks().getSscMarks());
 		userEntity.setStudentMarks(studentmarksEntity);
 		return userEntity;
+	}
+	private List<Address> getAddressEntity(List<AddressRequest> addressRequestlist) {
+		List<Address> addresslist = new ArrayList<Address>();
+		Address addressEntity = new Address();
+		for (AddressRequest address : addressRequestlist) {
+			addressEntity.setCity(address.getCity());
+			addressEntity.setState(address.getState());
+			addressEntity.setPincode(address.getPincode());
+			addresslist.add(addressEntity);
+		}
+		return addresslist;
+	}
+
+	public UserResponse update(UserRequest userRequest, int userId) {
+		User user = userDao.findById(userId).orElse(null);
+		if (user != null) {
+			UserResponse userResponse;
+			user = getUpdatedUserEntity(userRequest, user);
+			userDao.save(user);
+			userResponse = getUserResponse(user);
+			return userResponse;
+		}
+		return null;
 	}
 
 	private User getUpdatedUserEntity(UserRequest userRequest, User user) {
@@ -116,7 +129,7 @@ public class UserServiceImpl implements UserService {
 		user.setMiddleName(userRequest.getMiddleName());
 		user.setLastName(userRequest.getLastName());
 		user.setMobileNumber(userRequest.getMobileNumber());
-		user.setUserPassword(userRequest.getUserPassword());
+		user.setUserPassword(hashPassword(userRequest.getUserPassword()));
 		user.setEmailId(userRequest.getEmailId());
 		studentmarksEntity = studentMarkDao.getById(user.getStudentMarks().getMarksId());
 		studentmarksEntity.setSscMarks(userRequest.getStudentMarks().getSscMarks());
@@ -131,19 +144,7 @@ public class UserServiceImpl implements UserService {
 		 */
 		return user;
 	}
-
-	private List<Address> getAddressEntity(List<AddressRequest> addressRequestlist) {
-		List<Address> addresslist = new ArrayList<Address>();
-		Address addressEntity = new Address();
-		for (AddressRequest address : addressRequestlist) {
-			addressEntity.setCity(address.getCity());
-			addressEntity.setState(address.getState());
-			addressEntity.setPincode(address.getPincode());
-			addresslist.add(addressEntity);
-		}
-		return addresslist;
-	}
-
+	
 	@Override
 	public AddressResponse updateAddress(AddressRequest addressRequest, int userId, int addressId) {
 		Address address = addressDao.findById(addressId).orElse(null);
@@ -157,6 +158,21 @@ public class UserServiceImpl implements UserService {
 			addressResponse.setState(address.getState());
 			addressResponse.setPincode(address.getPincode());
 			return addressResponse;
+		}
+		return null;
+	}
+	private String hashPassword(String password) {
+		try {
+			MessageDigest md = MessageDigest.getInstance("SHA-256");
+			md.update(password.getBytes());
+			byte[] digest = md.digest();
+			StringBuffer hexString = new StringBuffer();
+			for (int i = 0; i < digest.length; i++) {
+				hexString.append(Integer.toHexString(0xFF & digest[i]));
+			}
+			return hexString.toString();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
 		}
 		return null;
 	}

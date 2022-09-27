@@ -1,5 +1,7 @@
 package com.xoriant.enrollmentapplication.springJWT.controllers;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -55,7 +57,7 @@ public class AuthController {
 	  
 	  Authentication authentication = authenticationManager.authenticate(new
 	  UsernamePasswordAuthenticationToken(email,
-	  password));
+			  hashPassword(password)));
 	  
 	  SecurityContextHolder.getContext().setAuthentication(authentication); String
 	  jwt = jwtUtils.generateJwtToken(authentication);
@@ -65,6 +67,21 @@ public class AuthController {
 
 	  return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getUserId(),userDetails.getEmailId())); 
 	  }
+	  private String hashPassword(String password) {
+			try {
+				MessageDigest md = MessageDigest.getInstance("SHA-256");
+				md.update(password.getBytes());
+				byte[] digest = md.digest();
+				StringBuffer hexString = new StringBuffer();
+				for (int i = 0; i < digest.length; i++) {
+					hexString.append(Integer.toHexString(0xFF & digest[i]));
+				}
+				return hexString.toString();
+			} catch (NoSuchAlgorithmException e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
 	/*
 	 * @PostMapping("/register") public ResponseEntity<?> registerUser(@RequestBody
 	 * UserRequest signUpRequest) { if
