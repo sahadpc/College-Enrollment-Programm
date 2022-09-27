@@ -22,10 +22,11 @@ public class StudentEnrollmentController {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping("/login")
-	public String login(@RequestParam("email") String email, @RequestParam("password") String password) {
-		return userService.login(email, password);
-	}
+	/*
+	 * @GetMapping("/login") public String login(@RequestParam("email") String
+	 * email, @RequestParam("password") String password) { return
+	 * userService.login(email, password); }
+	 */
 
 	@PostMapping("/register")
 	public UserResponse register(@RequestBody UserRequest userRequest) {

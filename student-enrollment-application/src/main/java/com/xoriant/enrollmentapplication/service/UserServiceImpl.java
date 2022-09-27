@@ -31,17 +31,17 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private StudentMarkDao studentMarkDao;
 
-	@Override
-	public String login(String email, String password) {
-		String message = "Invalid userName or Password!";
-		User user = userDao.findByEmailId(email);
-		if (user != null) {
-			if (user.getUserPassword().equals(password) && user.getEmailId().equals(email)) {
-				message = "Login Successful";
-			}
-		}
-		return message;
-	}
+//	@Override
+//	public String login(String email, String password) {
+//		String message = "Invalid userName or Password!";
+//		User user = userDao.findByEmailId(email);
+//		if (user != null) {
+//			if (user.getUserPassword().equals(password) && user.getEmailId().equals(email)) {
+//				message = "Login Successful";
+//			}
+//		}
+//		return message;
+//	}
 
 	@Override
 	public UserResponse register(UserRequest userRequest) {
