@@ -14,4 +14,6 @@ public interface UserService {
 	public UserResponse update(UserRequest userRequest, int userId);
 
 	public AddressResponse updateAddress(AddressRequest addressRequest, int userId, int addressId);
+	
+	public UserResponse getUserByEmail(String email);
 }

@@ -43,4 +43,10 @@ public class StudentEnrollmentController {
 			@RequestParam("addressId") int addressId) {
 		return userService.updateAddress(addressRequest, userId, addressId);
 	}
+	
+	@GetMapping("/getbyemail")
+	public UserResponse getUserByEmail(@RequestParam("email") String email)
+	{
+		return userService.getUserByEmail(email);
+	}
 }

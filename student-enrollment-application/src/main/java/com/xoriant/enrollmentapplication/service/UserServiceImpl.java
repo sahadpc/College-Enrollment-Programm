@@ -61,11 +61,15 @@ public class UserServiceImpl implements UserService {
 	private UserResponse getUserResponse(User userEntity) {
 
 		UserResponse userResponse = new UserResponse();
+		StudentMarks studentMarks=new StudentMarks();
 		userResponse.setUserId(userEntity.getUserId());
 		userResponse.setFirstName(userEntity.getFirstName());
 		userResponse.setMiddleName(userEntity.getMiddleName());
 		userResponse.setLastName(userEntity.getLastName());
 		userResponse.setEmailId(userEntity.getEmailId());
+		studentMarks.setSscMarks(userEntity.getStudentMarks().getSscMarks());
+		studentMarks.setMarksId(userEntity.getStudentMarks().getMarksId());
+		userResponse.setStudentMarks(studentMarks);
 		userResponse.setAddress(getAddressResponse(userEntity.getAddress()));
 		return userResponse;
 	}
@@ -74,6 +78,7 @@ public class UserServiceImpl implements UserService {
 		AddressResponse addressResponse = new AddressResponse();
 		for (Address address : addressResponselist) 
 		{
+			addressResponse.setAddressId(address.getAddressId());
 			addressResponse.setCity(address.getCity());
 			addressResponse.setState(address.getState());
 			addressResponse.setPincode(address.getPincode());
@@ -129,7 +134,7 @@ public class UserServiceImpl implements UserService {
 		user.setMiddleName(userRequest.getMiddleName());
 		user.setLastName(userRequest.getLastName());
 		user.setMobileNumber(userRequest.getMobileNumber());
-		user.setUserPassword(hashPassword(userRequest.getUserPassword()));
+		//user.setUserPassword(hashPassword(userRequest.getUserPassword()));
 		user.setEmailId(userRequest.getEmailId());
 		studentmarksEntity = studentMarkDao.getById(user.getStudentMarks().getMarksId());
 		studentmarksEntity.setSscMarks(userRequest.getStudentMarks().getSscMarks());
@@ -176,5 +181,11 @@ public class UserServiceImpl implements UserService {
 		}
 		return null;
 	}
-
+	
+	@Override
+	public UserResponse getUserByEmail(String email) {
+		User user = userDao.findByEmailId(email);
+		UserResponse userResponse=getUserResponse(user);
+		return userResponse;
+	}
 }
