@@ -31,7 +31,8 @@ import com.xoriant.enrollmentapplication.springJWT.response.MessageResponse;
 import com.xoriant.enrollmentapplication.springJWT.security.jwt.JwtUtils;
 import com.xoriant.enrollmentapplication.springJWT.security.services.UserDetailsImpl;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
