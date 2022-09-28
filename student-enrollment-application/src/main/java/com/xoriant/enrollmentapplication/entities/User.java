@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity(name = "user")
 public class User {
@@ -17,16 +20,25 @@ public class User {
 	@Id
 	@GeneratedValue
 	private int userId;
+	@NotNull
+	@NotEmpty
 	private String firstName;
+	@NotNull
+	@NotEmpty
 	private String middleName;
+	@NotNull
+	@NotEmpty
 	private String lastName;
+	@NotNull
 	private long mobileNumber;
+	@Email
 	private String emailId;
+	@NotNull
+	@NotEmpty
 	private String userPassword;
 
 	@OneToOne(cascade = CascadeType.ALL) 
 	@JoinColumn(name = "marks_id", referencedColumnName = "marksId")
-	//@PrimaryKeyJoinColumn
 	private StudentMarks studentMarks;
 
 	@OneToMany (cascade = CascadeType.ALL) 
