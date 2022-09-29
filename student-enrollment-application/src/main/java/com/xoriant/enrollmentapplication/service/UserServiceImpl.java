@@ -66,6 +66,7 @@ public class UserServiceImpl implements UserService {
 		userResponse.setFirstName(userEntity.getFirstName());
 		userResponse.setMiddleName(userEntity.getMiddleName());
 		userResponse.setLastName(userEntity.getLastName());
+		userResponse.setMobileNumber(userEntity.getMobileNumber());
 		userResponse.setEmailId(userEntity.getEmailId());
 		studentMarks.setSscMarks(userEntity.getStudentMarks().getSscMarks());
 		studentMarks.setMarksId(userEntity.getStudentMarks().getMarksId());
