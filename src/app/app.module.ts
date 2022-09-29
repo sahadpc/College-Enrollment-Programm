@@ -1,13 +1,7 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule, routingComponents } from './app-routing.module';
-import { AppComponent } from './app.component';
-
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LayoutModule } from '@angular/cdk/layout';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule , HTTP_INTERCEPTORS} from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -16,41 +10,68 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
 
-/*
-import { RegisterUserComponent } from './register-user/register-user.component';
-import { UserLoginComponent } from './user-login/user-login.component'
-*/
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import {ConfirmEqualValidatorDirective} from './shared/conform-equal-validatot.directive';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RouterModule } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
+import {AuthInterceptor} from './auth/auth.interceptor';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    /*
-    RegisterUserComponent,
-    UserLoginComponent
-    */
-    routingComponents,
-    DashboardComponent,
+    LoginComponent,
+    SignupComponent,
+    ConfirmEqualValidatorDirective,
+    PagenotfoundComponent,
+    DashboardComponent
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    LayoutModule,
-    MatToolbarModule,
+    RouterModule,
+  
+    
+    HttpClientModule,
     MatButtonModule,
+    MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    BrowserAnimationsModule,
+    LayoutModule
+
+
+
+
+
+
+    
   ],
-  providers: [],
+  providers: [AuthGuard,
+  {
+    provide:HTTP_INTERCEPTORS,
+    useClass:AuthInterceptor,
+    multi:true
+
+ }
+  ],
   bootstrap: [AppComponent]
 })
-
 export class AppModule { }
