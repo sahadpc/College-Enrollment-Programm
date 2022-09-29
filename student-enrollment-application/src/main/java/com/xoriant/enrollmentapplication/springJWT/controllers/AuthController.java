@@ -2,10 +2,6 @@ package com.xoriant.enrollmentapplication.springJWT.controllers;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,18 +12,13 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.xoriant.enrollmentapplication.Repository.UserDao;
-import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
-import com.xoriant.enrollmentapplication.entities.User;
 import com.xoriant.enrollmentapplication.springJWT.response.JwtResponse;
-import com.xoriant.enrollmentapplication.springJWT.response.MessageResponse;
 import com.xoriant.enrollmentapplication.springJWT.security.jwt.JwtUtils;
 import com.xoriant.enrollmentapplication.springJWT.security.services.UserDetailsImpl;
 

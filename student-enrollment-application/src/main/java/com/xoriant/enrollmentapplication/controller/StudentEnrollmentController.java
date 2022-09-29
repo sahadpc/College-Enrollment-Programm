@@ -1,6 +1,7 @@
 package com.xoriant.enrollmentapplication.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,7 +9,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
 import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
@@ -18,7 +21,6 @@ import com.xoriant.enrollmentapplication.service.UserService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-
 @RequestMapping("/api")
 public class StudentEnrollmentController {
 
@@ -32,8 +34,14 @@ public class StudentEnrollmentController {
 	 */
 
 	@PostMapping("/register")
+	@ResponseStatus(code = HttpStatus.CREATED)
 	public UserResponse register(@RequestBody UserRequest userRequest) {
-		return userService.register(userRequest);
+		UserResponse userRequestGetByEmail = new UserResponse();
+		userRequestGetByEmail = userService.getUserByEmail(userRequest.getEmailId());
+		if (userRequestGetByEmail == null) {
+			return userService.register(userRequest);
+		}
+		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "EmailId already exists!!!");
 	}
 
 	@PutMapping("/update")
@@ -46,10 +54,14 @@ public class StudentEnrollmentController {
 			@RequestParam("addressId") int addressId) {
 		return userService.updateAddress(addressRequest, userId, addressId);
 	}
-	
+
 	@GetMapping("/getbyemail")
-	public UserResponse getUserByEmail(@RequestParam("email") String email)
-	{
-		return userService.getUserByEmail(email);
+	public UserResponse getUserByEmail(@RequestParam("email") String email) {
+		UserResponse userResponse=new UserResponse();
+		userResponse=userService.getUserByEmail(email);
+		if (userResponse!=null) {
+			return userResponse;
+		}
+		throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Email id not found!!!");
 	}
 }
