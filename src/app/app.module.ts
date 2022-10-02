@@ -24,6 +24,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import {AuthInterceptor} from './auth/auth.interceptor';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 
 
 
@@ -34,7 +36,9 @@ import {AuthInterceptor} from './auth/auth.interceptor';
     SignupComponent,
     ConfirmEqualValidatorDirective,
     PagenotfoundComponent,
-    DashboardComponent
+    DashboardComponent,
+    ForgetPasswordComponent,
+    UserdashboardComponent
    
   ],
   imports: [

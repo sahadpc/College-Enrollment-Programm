@@ -186,7 +186,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserResponse getUserByEmail(String email) {
 		User user = userDao.findByEmailId(email);
-		UserResponse userResponse=getUserResponse(user);
-		return userResponse;
+		if(user!=null)
+		{
+			UserResponse userResponse=getUserResponse(user);
+			return userResponse;	
+		}
+		return null;
 	}
 }

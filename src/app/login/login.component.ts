@@ -16,20 +16,16 @@ export class LoginComponent implements OnInit {
 
 
  
-  loginUser(){
+  loginUser()
+  {
     console.log(this.user)
     this.registerService.loginnUser(this.user.email,this.user.password).subscribe((data:any)=>{
       localStorage.setItem('userToken',data.accessToken)
       alert("Login Successfull ");
       this.registerService.datails(this.user.email).subscribe((data:any)=>{
         localStorage.setItem('das',JSON.stringify(data));
-      this.rew.navigate(["dash"]);
-      ;
+      this.rew.navigate(["userdash"]);
       })
-      
-      
-      
-      
    },error=>alert("Invalid Login attempt"))
   }
 

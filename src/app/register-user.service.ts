@@ -11,6 +11,11 @@ export class RegisterService {
   
   constructor( private httpClient:HttpClient ) {  }
 
+  forgotPassword(email:string):Observable<Object>{
+    let params = new HttpParams();
+    params = params.append('email',email);
+    return this.httpClient.get(`${this.baseUrl}`+'forgetPassword',{params:params})
+  }
   registerUser( user: object ): Observable<Object>{
    
     console.log( user );

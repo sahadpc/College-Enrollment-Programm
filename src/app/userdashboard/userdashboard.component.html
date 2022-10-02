@@ -1,0 +1,89 @@
+
+<nav class="navbar navbar-dark bg-primary">
+    
+    <div class="fw-bolder align-items-center" style="color: white; text-align: center;">Student Enrollment Application</div>
+    
+    <div class="dropdown">
+            <button class="dropbtn">DashBoard Menu</button>
+            <div class="dropdown-content">
+              <a href="#">My Profile</a>
+              <a href="#">My Courses</a>
+              <a href="#">ChangePassword</a>
+              <a href ="" (click)="LogOut()">Log out</a>
+            </div>
+    </div>
+</nav>
+<mat-toolbar color="primary" class="navbar mt-2">
+    
+</mat-toolbar>
+<!--
+    <div class="card col-md-6 d-flex align-items-center mt-2 p-4 bg-light shadow">
+    <div>
+        <img src="assets\images\—Pngtree—man avatar with circle frame_8515464.png">
+    </div>
+    Hello User,
+</div>
+-->
+<div class="row">
+    <div class="col-lg-4 mt-4">
+        <div class="card mb-4 bg-light shadow">
+            <div class="card-body text-center">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+                <h5 class="my-3">{{sess.firstName}} {{sess.middleName}} {{sess.lastName}}</h5>
+                <p class="text-muted mb-1">Student</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8 mt-4">
+        <div class="card mb-4 bg-light shadow">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Email</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.emailId}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">SSC percentage</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.studentMarks.sscMarks}}%</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Course</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <select  class="form-select" name="courses" id="courses">
+                            <option value="Core Java">Core Java</option>
+                            <option value="Python">Python</option>
+                            <option value="My Sql">My SQL</option>
+                            <option value="Angular">Angular</option>
+                          </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Branch</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <select  class="form-select" name="Branch" id="Branch">
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="MECH">MECH</option>
+                            <option value="EEE">EEE</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

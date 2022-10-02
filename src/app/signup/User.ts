@@ -7,7 +7,7 @@ export class User {
     city !:string;
     state !:string;
     pincode !:number;
-    mobile !:number;
+    mobile !:string;
     email !:string;
     sscpercentage!:String;
     password!:string;

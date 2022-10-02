@@ -24,7 +24,6 @@ export class DashboardComponent implements OnInit {
     localStorage.removeItem('userToken');
     localStorage.removeItem('das');
     this.rout.navigate(['login']);
-
   }
  
   
