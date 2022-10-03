@@ -252,3 +252,11 @@ java.io.InvalidClassException: org.eclipse.m2e.core.embedder.ArtifactKey; local 
 2022-10-02 09:22:00,851 [Worker-281: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-10-02 09:22:00,851 [Worker-281: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2022-10-02 09:22:00,853 [Worker-281: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\College-Enrollment-Programm\student-enrollment-application\src\test\resources
+2022-10-02 10:55:12,938 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2022-10-02 11:06:44,008 [Worker-1: Launching student-enrollment-application - StudentEnrollmentApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-02 11:06:44,009 [Worker-1: Launching student-enrollment-application - StudentEnrollmentApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-02 11:06:44,017 [Worker-1: Launching student-enrollment-application - StudentEnrollmentApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-10-02 11:06:44,065 [Worker-1: Launching student-enrollment-application - StudentEnrollmentApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-10-02 11:06:44,070 [Worker-1: Launching student-enrollment-application - StudentEnrollmentApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-10-02 11:06:44,070 [Worker-1: Launching student-enrollment-application - StudentEnrollmentApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2022-10-02 11:06:44,071 [Worker-1: Launching student-enrollment-application - StudentEnrollmentApplication] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\College-Enrollment-Programm\student-enrollment-application\src\test\resources

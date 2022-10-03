@@ -6,10 +6,10 @@
     <div class="dropdown">
             <button class="dropbtn">DashBoard Menu</button>
             <div class="dropdown-content">
-              <a href="#">My Profile</a>
-              <a href="#">My Courses</a>
-              <a href="#">ChangePassword</a>
-              <a href ="" (click)="LogOut()">Log out</a>
+              <a href="javascript: void(0);">My Profile</a>
+              <a href="javascript: void(0);">My Courses</a>
+              <a href="javascript: void(0);">ChangePassword</a>
+              <a href ="javascript: void(0);" (click)="LogOut()">Log out</a>
             </div>
     </div>
 </nav>
@@ -36,6 +36,7 @@
         </div>
     </div>
     <div class="col-lg-8 mt-4">
+     <form class="was-validated" #loginForm="ngForm" (ngSubmit)="userDashboard()" >
         <div class="card mb-4 bg-light shadow">
             <div class="card-body">
                 <div class="row">
@@ -58,6 +59,21 @@
                 <hr>
                 <div class="row">
                     <div class="col-sm-3">
+                        <p class="mb-0">Name of the College</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <select  class="form-select" name="college" id="college">
+                            <option value="Indian Institute of Technology, Madras">Indian Institute of Technology, Madras</option>
+                            <option value="Anna University">Anna University</option>
+                            <option value="Universtiy Of Delhi">Universtiy Of Delhi</option>
+                            <option value="Acharya Nagarjuna University">Acharya Nagarjuna University</option>
+                            <option value="Indian Institute of Technology, Kharagpur">Indian Institute of Technology, Kharagpur</option>
+                          </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
                         <p class="mb-0">Course</p>
                     </div>
                     <div class="col-sm-9">
@@ -69,21 +85,13 @@
                           </select>
                     </div>
                 </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p class="mb-0">Branch</p>
-                    </div>
-                    <div class="col-sm-9">
-                        <select  class="form-select" name="Branch" id="Branch">
-                            <option value="CSE">CSE</option>
-                            <option value="ECE">ECE</option>
-                            <option value="MECH">MECH</option>
-                            <option value="EEE">EEE</option>
-                          </select>
-                    </div>
-                </div>
             </div>
         </div>
-    </div>
+        <div class="row" style="float: right;">
+            <div class ="col-lg-4 col-md-6 col-sm-9" >
+             <button  type="submit" class="btn btn-outline-primary text-center">Submit</button>
+            </div>
+        </div>
+    </form>
+ </div>
 </div>
