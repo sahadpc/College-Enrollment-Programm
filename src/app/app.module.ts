@@ -26,6 +26,7 @@ import { AuthGuard } from './auth/auth.guard';
 import {AuthInterceptor} from './auth/auth.interceptor';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
 
 
@@ -38,7 +39,8 @@ import { UserdashboardComponent } from './userdashboard/userdashboard.component'
     PagenotfoundComponent,
     DashboardComponent,
     ForgetPasswordComponent,
-    UserdashboardComponent
+    UserdashboardComponent,
+    ChangepasswordComponent
    
   ],
   imports: [
