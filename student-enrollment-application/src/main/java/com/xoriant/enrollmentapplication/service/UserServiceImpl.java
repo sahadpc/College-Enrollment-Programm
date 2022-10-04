@@ -10,13 +10,20 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xoriant.enrollmentapplication.Repository.AddressDao;
+import com.xoriant.enrollmentapplication.Repository.CollegeDao;
+import com.xoriant.enrollmentapplication.Repository.CourseDao;
 import com.xoriant.enrollmentapplication.Repository.StudentMarkDao;
 import com.xoriant.enrollmentapplication.Repository.UserDao;
 import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
+import com.xoriant.enrollmentapplication.RequestEntities.CourseRequest;
 import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
 import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
+import com.xoriant.enrollmentapplication.ResponseEntities.CollegeResponse;
+import com.xoriant.enrollmentapplication.ResponseEntities.CourseResponse;
 import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
 import com.xoriant.enrollmentapplication.entities.Address;
+import com.xoriant.enrollmentapplication.entities.College;
+import com.xoriant.enrollmentapplication.entities.Course;
 import com.xoriant.enrollmentapplication.entities.StudentMarks;
 import com.xoriant.enrollmentapplication.entities.User;
 
@@ -33,6 +40,12 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private StudentMarkDao studentMarkDao;
 
+	@Autowired
+	private CourseDao courseDao;
+	
+	@Autowired
+	private CollegeDao collegeDao;
+	
 //	@Override
 //	public String login(String email, String password) {
 //		String message = "Invalid userName or Password!";
@@ -189,8 +202,36 @@ public class UserServiceImpl implements UserService {
 		if(user!=null)
 		{
 			UserResponse userResponse=getUserResponse(user);
-			return userResponse;	
+			return userResponse;
 		}
 		return null;
+	}
+
+	@Override
+	public UserResponse updatePassword(int userId, String password) {
+		User user = userDao.findById(userId).orElse(null);
+		if (user != null) {
+			UserResponse userResponse;
+			user.setUserPassword(hashPassword(password));
+			userDao.save(user);
+			userResponse = getUserResponse(user);
+			return userResponse;
+		}
+		return null;
+	}
+
+
+	@Override
+	public List<CourseResponse> getCoursesByUserId(int userId) {
+		List<CourseResponse> courseResponses = new ArrayList<CourseResponse>();
+		//List<Course> courses = courseDao.findAllByUserId(userId);
+		return courseResponses;
+	}
+
+	@Override
+	public List<CollegeResponse> getCollegesByCourseId(int courseId) {
+		List<CollegeResponse> collegeRsesponses = new ArrayList<CollegeResponse>();
+		//List<College> colleges = collegeDao.findAllByCourseId(courseId);
+		return collegeRsesponses;
 	}
 }

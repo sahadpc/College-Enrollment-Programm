@@ -7950,3 +7950,18 @@ Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
 
 !ENTRY org.eclipse.ui 2 2 2022-10-04 11:07:31.657
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-10-04 11:15:32.539
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.ZVkxCreS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-10-04 11:15:32.542
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.ZVkxCreS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-10-04 11:15:32.545
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-10-04 11:15:32.548
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.ZVkxCreS => OK
+
+!ENTRY org.eclipse.ui 2 2 2022-10-04 11:15:34.145
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
