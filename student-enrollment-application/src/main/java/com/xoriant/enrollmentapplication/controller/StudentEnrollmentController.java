@@ -1,5 +1,8 @@
 package com.xoriant.enrollmentapplication.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,8 +19,13 @@ import org.springframework.web.server.ResponseStatusException;
 import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
 import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
 import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
+import com.xoriant.enrollmentapplication.ResponseEntities.CollegeResponse;
+import com.xoriant.enrollmentapplication.ResponseEntities.CourseResponse;
 import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
+import com.xoriant.enrollmentapplication.service.EmailService;
 import com.xoriant.enrollmentapplication.service.UserService;
+
+import net.bytebuddy.utility.RandomString;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -26,6 +34,9 @@ public class StudentEnrollmentController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private EmailService mailService;
 
 	/*
 	 * @GetMapping("/login") public String login(@RequestParam("email") String
@@ -63,5 +74,34 @@ public class StudentEnrollmentController {
 			return userResponse;
 		}
 		throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Email id not found!!!");
+	}
+	
+	@GetMapping("/forgetPassword")
+	public String resetPassword(@RequestParam("email") String email) {
+		UserResponse userResponse = new UserResponse();
+		userResponse = userService.getUserByEmail(email);
+		if(userResponse != null) {
+			String password = RandomString.make(8);
+			int userId = userResponse.getUserId();
+			userResponse = userService.updatePassword(userId,password);
+			mailService.sendMail(email, "Reset password Link", "Use this password to login:" + password);
+			return "password reset successfull";
+		}
+		return null;
+	}
+	
+	@GetMapping("/getCoursesByUserId")
+	public List<CourseResponse> getCoursesbyUserId(@RequestParam("userId") int userId) {
+		List<CourseResponse> courseResponses = new ArrayList<CourseResponse>();
+		courseResponses = userService.getCoursesByUserId(userId);
+		return courseResponses;
+	}
+	
+	@GetMapping("/getCollegesByCourseId")
+	public List<CollegeResponse> getCollegesByCourseId(@RequestParam("courseId") int courseId){
+		List<CollegeResponse> collegeResponses = new ArrayList<CollegeResponse>();
+		collegeResponses = userService.getCollegesByCourseId(courseId);
+		return null;
+		
 	}
 }
