@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+//import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
