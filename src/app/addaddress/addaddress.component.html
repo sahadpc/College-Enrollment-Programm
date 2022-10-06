@@ -1,0 +1,56 @@
+<!-- <nav class="navbar navbar-dark bg-primary">
+    <div class="fw-bolder align-items-center" style="color: white; text-align: center;">Student Enrollment Application
+    </div>
+
+    <div class="dropdown">
+        <button class="dropbtn">DashBoard Menu</button>
+        <div class="dropdown-content">
+            <a href="/dash">My Profile</a>
+            <a href="#">My Courses</a>
+            <a href="#">ChangePassword</a>
+            <a href="" (click)="LogOut()">Log out</a>
+        </div>
+    </div>
+</nav> -->
+
+<div class="container-fluid">
+    <div class="row row-cols-1 row-cols-md-3 my-5 justify-content-center">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Add Address</h5>
+                    <form>
+                        <div class="mb-3 mt-3">
+                            <label for="inputCountry" class="form-label">Country</label>
+                        <select class="form-select" placeholder="Country" disabled="true">
+                            <option>India</option>
+                            <!-- <option *ngFor="let country of Countries">{{country.name}}</option> -->
+                        </select>
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="inputState" class="form-label">State</label>
+                        <select class="form-select" placeholder="State" [(ngModel)]="selectedState" (change)="changeState($event)" required="true">
+                            <option>--Choose State--</option>
+                            <option *ngFor="let state of States">{{state.name}}</option>
+                        </select>
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="inputCity" class="form-label">City</label>
+                            <select class="form-select" placeholder="City" required="true">
+                                <option>--Choose City--</option>
+                                <option *ngFor="let city of cities">{{city}}</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 mt-3">
+                            <label for="inputZip" class="form-label">Pincode</label>
+                            <input type="number" class="form-control" id="inputZip" required="true">
+                        </div>
+                        <input type="submit" class="btn btn-outline-success btn-sm col-12 my-2" value="Add">
+                        <!-- <button type="submit" class="btn btn-outline-success btn-sm col-12 my-2">Add</button> -->
+                        <button type="reset" class="btn btn-outline-dark btn-sm col-12">Reset</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

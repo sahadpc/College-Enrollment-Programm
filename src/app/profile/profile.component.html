@@ -1,0 +1,128 @@
+<div class="row">
+    <div class="col-lg-4 mt-4">
+        <div class="card mb-4 bg-light shadow">
+            <div class="card-body text-center">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                    class="rounded-circle img-fluid" style="width: 150px;">
+                <h5 class="my-3">{{sess.firstName}} {{sess.middleName}} {{sess.lastName}}</h5>
+                <p class="text-muted mb-1">Student</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8 mt-4">
+        <div class="card mb-4 bg-light shadow">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">City</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.address[0].city}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">State</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0 ">{{sess.address[0].state}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Pincode</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.address[0].pincode}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Mobile</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.mobileNumber}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Email</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.emailId}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">SSC percentage</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.studentMarks.sscMarks}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4 mt-4">
+        <!-- <div class="card mb-4 bg-light shadow">
+            <div class="card-body text-center">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+                <h5 class="my-3">{{sess.firstName}} {{sess.middleName}} {{sess.lastName}}</h5>
+                <p class="text-muted mb-1">Student</p>
+            </div>
+        </div> -->
+    </div>
+    <div class="col-lg-8 mt-4">
+        <div class="card mb-4 bg-light shadow">
+            <div class="card-body">
+                <form class="row g-3">
+                    <div class="col-md-2">
+                        <label for="inputCountry" class="form-label">Country</label>
+                        <select class="form-select" placeholder="Country" disabled="true">
+                            <option>India</option>
+                            <!-- <option *ngFor="let country of Countries">{{country.name}}</option> -->
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="inputState" class="form-label">State</label>
+                        <select class="form-select" name="selectState" [(ngModel)]="selectedState" (change)="changeState($event)">
+                            <option>--Choose State--</option>
+                            <option *ngFor="let state of States">{{state.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="inputCity" class="form-label">City</label>
+                        <select class="form-select" placeholder="City">
+                            <option>--Choose City--</option>
+                            <option *ngFor="let city of cities">{{city}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="inputZip" class="form-label">Pincode</label>
+                        <input type="number" class="form-control" id="inputZip">
+                    </div>
+                    <div class="col-md-3 addressEditButtons">
+                        <button type="submit" class="btn btn-outline-success btn-sm">Save</button>
+                        <button type="submit" class="btn btn-outline-primary btn-sm mx-1">Edit</button>
+                        <button type="submit" class="btn btn-outline-danger btn-sm mx-1">X</button>
+                    </div>
+                </form>
+                <!-- <div class="col-6 addaddressbutton">
+                    <button type="submit" class="btn btn-primary btn-sm">Add Address</button>
+                </div> -->
+            </div>
+            <div class="card-footer text-end">
+                <button class="btn btn-primary btn-sm" routerLink="/user/addaddress">Add Address</button>
+            </div>
+        </div>
+    </div>
+</div>
