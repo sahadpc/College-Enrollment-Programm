@@ -14,6 +14,6 @@ export class User {
     password!:string;
     confirmpassword!:string; 
     collegename!: string;
-    coursename!:string
-    CurrentPassword!:string
+    coursename!:string;
+    CurrentPassword!:string;
 }

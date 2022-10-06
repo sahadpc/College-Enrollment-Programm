@@ -15,9 +15,8 @@ export class ForgetPasswordComponent implements OnInit {
   forgetpassword(){
     console.log(this.user.email)
     this.registerService.forgotPassword(this.user.email).subscribe((data:any)=>{
-      this.rew.navigate(["login"]);
+      this.rew.navigate(['/login']);
     })
-    // this.rew.navigate(["login"]);
   }
   ngOnInit(): void {
   }

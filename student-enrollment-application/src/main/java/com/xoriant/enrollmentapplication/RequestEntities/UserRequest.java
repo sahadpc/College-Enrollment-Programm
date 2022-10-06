@@ -15,14 +15,7 @@ public class UserRequest {
 	private StudentMarksRequest studentMarks;
 	
 	private List<AddressRequest> address = new ArrayList<>();
-	private List<CourseRequest> courses = new ArrayList<>();
-	
-	public List<CourseRequest> getCourses() {
-		return courses;
-	}
-	public void setCourses(List<CourseRequest> courses) {
-		this.courses = courses;
-	}
+
 	public List<AddressRequest> getAddress() {
 		return address;
 	}

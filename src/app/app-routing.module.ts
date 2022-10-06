@@ -7,6 +7,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { SignupComponent } from './signup/signup.component';
+import { UsercoursesComponent } from './usercourses/usercourses.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
 {path:'userdash',component:UserdashboardComponent,canActivate :[AuthGuard]},
 //{path:'dash',component:DashboardComponent,canActivate:[AuthGuard]},
 {path:'forget',component:ForgetPasswordComponent},
-{path:'changepassword',component:ChangepasswordComponent,canActivate :[AuthGuard]},
+{path:'changepassword',component:ChangepasswordComponent},
+{path:'coursedetails',component:UsercoursesComponent},
 {path:'**',component:PagenotfoundComponent},
 ];
 

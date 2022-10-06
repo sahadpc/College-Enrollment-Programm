@@ -16,10 +16,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import lombok.Getter;
-import lombok.Setter;
 
-@Setter @Getter
 @Entity(name = "user")
 public class User {
 
@@ -29,8 +26,6 @@ public class User {
 	@NotNull
 	@NotEmpty
 	private String firstName;
-	@NotNull
-	@NotEmpty
 	private String middleName;
 	@NotNull
 	@NotEmpty
@@ -51,13 +46,78 @@ public class User {
 	@JoinColumn(name = "userId", referencedColumnName = "userId")
 	private List<Address> address;
 	
-	@ManyToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(name = "user_college",
-		joinColumns = {
-				@JoinColumn(name = "userId", referencedColumnName = "userId")
-		},
-		inverseJoinColumns = {
-				@JoinColumn(name = "collegeId", referencedColumnName = "collegeId")
-		})
-	private List<College> colleges;
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getMiddleName() {
+		return middleName;
+	}
+
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public long getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(long mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String getUserPassword() {
+		return userPassword;
+	}
+
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
+
+	public StudentMarks getStudentMarks() {
+		return studentMarks;
+	}
+
+	public void setStudentMarks(StudentMarks studentMarks) {
+		this.studentMarks = studentMarks;
+	}
+
+	public List<Address> getAddress() {
+		return address;
+	}
+
+	public void setAddress(List<Address> address) {
+		this.address = address;
+	}
+
+	
 }

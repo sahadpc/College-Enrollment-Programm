@@ -27,6 +27,7 @@ import {AuthInterceptor} from './auth/auth.interceptor';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { UsercoursesComponent } from './usercourses/usercourses.component';
 
 
 
@@ -40,7 +41,8 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
     DashboardComponent,
     ForgetPasswordComponent,
     UserdashboardComponent,
-    ChangepasswordComponent
+    ChangepasswordComponent,
+    UsercoursesComponent
    
   ],
   imports: [

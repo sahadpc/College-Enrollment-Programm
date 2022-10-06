@@ -10,20 +10,17 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xoriant.enrollmentapplication.Repository.AddressDao;
-import com.xoriant.enrollmentapplication.Repository.CollegeDao;
-import com.xoriant.enrollmentapplication.Repository.CourseDao;
+
 import com.xoriant.enrollmentapplication.Repository.StudentMarkDao;
 import com.xoriant.enrollmentapplication.Repository.UserDao;
 import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
-import com.xoriant.enrollmentapplication.RequestEntities.CourseRequest;
+
 import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
 import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
-import com.xoriant.enrollmentapplication.ResponseEntities.CollegeResponse;
-import com.xoriant.enrollmentapplication.ResponseEntities.CourseResponse;
+
 import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
 import com.xoriant.enrollmentapplication.entities.Address;
-import com.xoriant.enrollmentapplication.entities.College;
-import com.xoriant.enrollmentapplication.entities.Course;
+
 import com.xoriant.enrollmentapplication.entities.StudentMarks;
 import com.xoriant.enrollmentapplication.entities.User;
 
@@ -39,24 +36,6 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private StudentMarkDao studentMarkDao;
-
-	@Autowired
-	private CourseDao courseDao;
-	
-	@Autowired
-	private CollegeDao collegeDao;
-	
-//	@Override
-//	public String login(String email, String password) {
-//		String message = "Invalid userName or Password!";
-//		User user = userDao.findByEmailId(email);
-//		if (user != null) {
-//			if (user.getUserPassword().equals(password) && user.getEmailId().equals(email)) {
-//				message = "Login Successful";
-//			}
-//		}
-//		return message;
-//	}
 
 	@Override
 	public UserResponse register(UserRequest userRequest) {
@@ -220,18 +199,4 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
-
-	@Override
-	public List<CourseResponse> getCoursesByUserId(int userId) {
-		List<CourseResponse> courseResponses = new ArrayList<CourseResponse>();
-		//List<Course> courses = courseDao.findAllByUserId(userId);
-		return courseResponses;
-	}
-
-	@Override
-	public List<CollegeResponse> getCollegesByCourseId(int courseId) {
-		List<CollegeResponse> collegeRsesponses = new ArrayList<CollegeResponse>();
-		//List<College> colleges = collegeDao.findAllByCourseId(courseId);
-		return collegeRsesponses;
-	}
 }

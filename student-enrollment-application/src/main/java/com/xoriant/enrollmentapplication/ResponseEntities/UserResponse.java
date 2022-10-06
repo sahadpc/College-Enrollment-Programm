@@ -16,7 +16,6 @@ public class UserResponse {
 	private String userPassword;
 	private StudentMarks studentMarks;
 	private List<AddressResponse> address = new ArrayList<>();
-	private List<CourseResponse> courseResponses = new ArrayList<>();
 	
 	public List<AddressResponse> getAddress() {
 		return address;
@@ -72,11 +71,6 @@ public class UserResponse {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-	public List<CourseResponse> getCourseResponses() {
-		return courseResponses;
-	}
-	public void setCourseResponses(List<CourseResponse> courseResponses) {
-		this.courseResponses = courseResponses;
-	}
+
 
 }

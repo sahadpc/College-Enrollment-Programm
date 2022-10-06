@@ -5,8 +5,7 @@ import java.util.List;
 import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
 import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
 import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
-import com.xoriant.enrollmentapplication.ResponseEntities.CollegeResponse;
-import com.xoriant.enrollmentapplication.ResponseEntities.CourseResponse;
+
 import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
 
 public interface UserService {
@@ -23,7 +22,4 @@ public interface UserService {
 
 	public UserResponse updatePassword(int userId, String password);
 
-	public List<CourseResponse> getCoursesByUserId(int userId);
-
-	public List<CollegeResponse> getCollegesByCourseId(int courseId);
 }

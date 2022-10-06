@@ -7,7 +7,7 @@
             <button class="dropbtn">DashBoard Menu</button>
             <div class="dropdown-content">
               <a href="javascript: void(0);">My Profile</a>
-              <a href="javascript: void(0);">My Courses</a>
+              <a href="javascript: void(0);"(click)="myCourses()">My Courses</a>
               <a href="javascript: void(0);" (click)="changePassword()">ChangePassword</a>
               <a href="javascript: void(0);" (click)="LogOut()">Log out</a>
             </div>
@@ -59,6 +59,20 @@
                 <hr>
                 <div class="row">
                     <div class="col-sm-3">
+                        <p class="mb-0">Course</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <select  class="form-select" name="courses" id="courses" [(ngModel)]="user.coursename" required="true">
+                            <option value="Core Java">Core Java</option>
+                            <option value="Python">Python</option>
+                            <option value="My Sql">My SQL</option>
+                            <option value="Angular">Angular</option>
+                          </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
                         <p class="mb-0">Name of the College</p>
                     </div>
                     <div class="col-sm-9">
@@ -68,20 +82,6 @@
                             <option value="Universtiy Of Delhi">Universtiy Of Delhi</option>
                             <option value="Acharya Nagarjuna University">Acharya Nagarjuna University</option>
                             <option value="Indian Institute of Technology, Kharagpur">Indian Institute of Technology, Kharagpur</option>
-                          </select>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <p class="mb-0">Course</p>
-                    </div>
-                    <div class="col-sm-9">
-                        <select  class="form-select" name="courses" id="courses" [(ngModel)]="user.coursename" required="true">
-                            <option value="Core Java">Core Java</option>
-                            <option value="Python">Python</option>
-                            <option value="My Sql">My SQL</option>
-                            <option value="Angular">Angular</option>
                           </select>
                     </div>
                 </div>

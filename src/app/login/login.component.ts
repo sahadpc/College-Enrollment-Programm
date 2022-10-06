@@ -14,8 +14,6 @@ export class LoginComponent implements OnInit {
 
   constructor(private registerService: RegisterService,private rew:Router) { }
 
-
- 
   loginUser()
   {
     console.log(this.user)

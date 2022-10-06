@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
 import { User } from './signup/User';
@@ -11,7 +11,7 @@ export class RegisterService {
   
   constructor( private httpClient:HttpClient ) {  }
 
-  forgotPassword(email:string):Observable<Object>{
+  forgotPassword(email:string):Observable<any>{
     let params = new HttpParams();
     params = params.append('email',email);
     return this.httpClient.get(`${this.baseUrl}`+'forgetPassword',{params:params})

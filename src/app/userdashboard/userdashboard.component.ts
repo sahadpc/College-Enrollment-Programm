@@ -8,23 +8,40 @@ import { UserdashboardserviceService } from '../userdashboardservice.service';
   templateUrl: './userdashboard.component.html',
   styleUrls: ['./userdashboard.component.css']
 })
-export class UserdashboardComponent implements OnInit {
+export class UserdashboardComponent implements OnInit 
+{
+  i:number=0;
+  userCourses:Array<string> = new Array();
   user:User = new User();
   data:any=localStorage.getItem('das');
   sess:any=JSON.parse(this.data);
-  constructor(private rout:Router,private dashboardservice:UserdashboardserviceService) { }
-  ngOnInit(): void {
+  constructor(private rout:Router,private dashboardservice:UserdashboardserviceService) 
+  { }
+  ngOnInit(): void 
+  {
   }
   changePassword()
   {
     this.rout.navigate(['/changepassword']);
   }
-  userDashboard(){
+  userDashboard()
+  { 
     console.log(this.sess.userId,this.user.collegename,this.user.coursename);
     // this.dashboardservice.courseEnrollment(this.sess.userId,this.user.collegename,this.user.coursename).subscribe((data:any)=>{
     //   alert("Submit Successfull ");
     // })
     alert("Submit Successfull");
+    localStorage.setItem('course',JSON.stringify(this.user));
+    this.userCourses[this.i++] = this.user.coursename;
+    console.log(this.userCourses);
+    localStorage.setItem('courseArray',JSON.stringify(this.userCourses));
+    this.rout.navigate(['coursedetails']);
+  }
+  myCourses()
+  {
+    localStorage.setItem('course',JSON.stringify(this.user));
+    console.log(this.user.collegename);
+    this.rout.navigate(['coursedetails']);
   }
   LogOut()
   {
