@@ -18,6 +18,8 @@ import { FormsModule } from '@angular/forms';
 import { UserDashboardRoutingModule } from './userdashboard.routing.module';
 import { UserdashboardLandingComponent } from './dashboardlanding/dashboardlanding.component';
 import { CommonModule } from '@angular/common';
+import { UsercoursesComponent } from '../usercourses/usercourses.component';
+import { ChangepasswordComponent } from '../changepassword/changepassword.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { CommonModule } from '@angular/common';
     UserdashboardComponent,
     ProfileComponent,
     AddaddressComponent,
+    ChangepasswordComponent,
+    UsercoursesComponent,
     UserdashboardLandingComponent
   ],
   imports: [

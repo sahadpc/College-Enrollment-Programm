@@ -16,6 +16,7 @@ export class ChangepasswordComponent implements OnInit {
 
   ngOnInit(): void {
   }
+ 
   changePassword(){
    console.log(this.sess.userId, this.user.CurrentPassword,this.user.password,this.user.confirmpassword);
    alert("Password Changed Sucessfully");

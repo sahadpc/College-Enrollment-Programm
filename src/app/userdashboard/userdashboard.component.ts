@@ -22,7 +22,7 @@ export class UserdashboardComponent implements OnInit
   }
   changePassword()
   {
-    this.rout.navigate(['/changepassword']);
+    this.rout.navigate(['/user/changepassword']);
   }
   userDashboard()
   { 
@@ -35,13 +35,13 @@ export class UserdashboardComponent implements OnInit
     this.userCourses[this.i++] = this.user.coursename;
     console.log(this.userCourses);
     localStorage.setItem('courseArray',JSON.stringify(this.userCourses));
-    this.rout.navigate(['coursedetails']);
+    this.rout.navigate(['./user/coursedetails']);
   }
   myCourses()
   {
     localStorage.setItem('course',JSON.stringify(this.user));
     console.log(this.user.collegename);
-    this.rout.navigate(['coursedetails']);
+    this.rout.navigate(['./user/coursedetails']);
   }
   LogOut()
   {
