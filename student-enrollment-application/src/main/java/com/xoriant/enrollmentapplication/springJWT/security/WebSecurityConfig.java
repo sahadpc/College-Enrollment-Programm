@@ -26,7 +26,7 @@ import com.xoriant.enrollmentapplication.springJWT.security.services.UserDetails
     // securedEnabled = true,
     // jsr250Enabled = true,
     prePostEnabled = true)
-public class WebSecurityConfig {// extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
   @Autowired
   UserDetailsServiceImpl userDetailsService;
 
@@ -52,14 +52,35 @@ public class WebSecurityConfig {// extends WebSecurityConfigurerAdapter {
    
       return authProvider;
   }
+
+//  @Bean
+//  @Override
+//  public AuthenticationManager authenticationManagerBean() throws Exception {
+//    return super.authenticationManagerBean();
+//  }
+  
   @Bean
   public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
     return authConfig.getAuthenticationManager();
   }
+
   @Bean
 	public PasswordEncoder passwordEncoder() {
 		return NoOpPasswordEncoder.getInstance();
 	}
+
+//  @Override
+//  protected void configure(HttpSecurity http) throws Exception {
+//    http.cors().and().csrf().disable()
+//      .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+//      .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+//      .authorizeRequests().antMatchers("/api/auth/**").permitAll()
+//      .antMatchers("/api/test/**").permitAll()
+//      .anyRequest().authenticated();
+//
+//    http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+//  }
+  
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http.cors().and().csrf().disable()
@@ -67,6 +88,7 @@ public class WebSecurityConfig {// extends WebSecurityConfigurerAdapter {
         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
         .authorizeRequests().antMatchers("/api/auth/**").permitAll()
         .antMatchers("/api/register").permitAll()
+        .antMatchers("/api/forgetPassword").permitAll()
         .anyRequest().authenticated();
     
     http.authenticationProvider(authenticationProvider());
@@ -75,21 +97,4 @@ public class WebSecurityConfig {// extends WebSecurityConfigurerAdapter {
     
     return http.build();
   }
-//@Bean
-//@Override
-//public AuthenticationManager authenticationManagerBean() throws Exception {
-//  return super.authenticationManagerBean();
-//}
-
-//@Override
-//protected void configure(HttpSecurity http) throws Exception {
-//  http.cors().and().csrf().disable()
-//    .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-//    .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-//    .authorizeRequests().antMatchers("/api/auth/**").permitAll()
-//    .antMatchers("/api/test/**").permitAll()
-//    .anyRequest().authenticated();
-//
-//  http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-//}
 }

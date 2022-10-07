@@ -5,10 +5,17 @@
     <div class="dropdown">
             <button class="dropbtn">DashBoard Menu</button>
             <div class="dropdown-content">
+<<<<<<< HEAD
               <a href="/dash">My Profile</a>
               <a href="javascript: void(0);">My Courses</a>
               <a href="javascript: void(0);">ChangePassword</a>
               <a href ="javascript: void(0);" (click)="LogOut()">Log out</a>
+=======
+              <a href="javascript: void(0);">My Profile</a>
+              <a href="javascript: void(0);"(click)="myCourses()">My Courses</a>
+              <a href="javascript: void(0);" (click)="changePassword()">ChangePassword</a>
+              <a href="javascript: void(0);" (click)="LogOut()">Log out</a>
+>>>>>>> b4da0397c6fb143ab2fa70dbcaa85fc0e8d8de46
             </div>
     </div>
 </nav>
@@ -97,5 +104,68 @@
             </form>
         </div>
     </div>
+<<<<<<< HEAD
 </div>
 <router-outlet></router-outlet>
+=======
+    <div class="col-lg-8 mt-4">
+     <form (ngSubmit)="userDashboard()" >
+        <div class="card mb-4 bg-light shadow">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Email</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.emailId}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">SSC percentage</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.studentMarks.sscMarks}}%</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Course</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <select  class="form-select" name="courses" id="courses" [(ngModel)]="user.coursename" required="true">
+                            <option value="Core Java">Core Java</option>
+                            <option value="Python">Python</option>
+                            <option value="My Sql">My SQL</option>
+                            <option value="Angular">Angular</option>
+                          </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Name of the College</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <select  class="form-select" name="college" id="college" [(ngModel)]="user.collegename" required="true">
+                            <option value="Indian Institute of Technology, Madras">Indian Institute of Technology, Madras</option>
+                            <option value="Anna University">Anna University</option>
+                            <option value="Universtiy Of Delhi">Universtiy Of Delhi</option>
+                            <option value="Acharya Nagarjuna University">Acharya Nagarjuna University</option>
+                            <option value="Indian Institute of Technology, Kharagpur">Indian Institute of Technology, Kharagpur</option>
+                          </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="float:right;padding-right: 50px;">
+            <div class ="col-lg-4 col-md-6 col-sm-9" >
+             <button  type="submit" class="btn btn-outline-primary text-center">Submit</button>
+            </div>
+        </div>
+    </form>
+ </div>
+</div>
+>>>>>>> b4da0397c6fb143ab2fa70dbcaa85fc0e8d8de46

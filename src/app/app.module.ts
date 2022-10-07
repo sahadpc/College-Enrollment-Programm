@@ -21,8 +21,16 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+<<<<<<< HEAD
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+=======
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { UsercoursesComponent } from './usercourses/usercourses.component';
+
+
+>>>>>>> b4da0397c6fb143ab2fa70dbcaa85fc0e8d8de46
 
 @NgModule({
   declarations: [
@@ -31,7 +39,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SignupComponent,
     PagenotfoundComponent,
     ForgetPasswordComponent,
+<<<<<<< HEAD
     ConfirmEqualValidatorDirective,
+=======
+    UserdashboardComponent,
+    ChangepasswordComponent,
+    UsercoursesComponent
+   
+>>>>>>> b4da0397c6fb143ab2fa70dbcaa85fc0e8d8de46
   ],
   imports: [
     BrowserModule,

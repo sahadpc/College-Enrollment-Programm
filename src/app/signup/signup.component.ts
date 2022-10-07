@@ -41,8 +41,6 @@ export class SignupComponent implements OnInit {
       console.log(data)
       alert("Successfully registered? ");
       this.rew.navigate(['login']);
-      
-      
    },error=>alert("User not registered"));
   }
 

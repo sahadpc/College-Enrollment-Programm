@@ -1,5 +1,6 @@
 export class User {
     //userId!:String;
+    userId!:number;
     firstname!:String;
     middlename!:String;
     lastname!:String;
@@ -12,4 +13,7 @@ export class User {
     sscpercentage!:String;
     password!:string;
     confirmpassword!:string; 
+    collegename!: string;
+    coursename!:string;
+    CurrentPassword!:string;
 }

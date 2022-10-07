@@ -10,13 +10,17 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xoriant.enrollmentapplication.Repository.AddressDao;
+
 import com.xoriant.enrollmentapplication.Repository.StudentMarkDao;
 import com.xoriant.enrollmentapplication.Repository.UserDao;
 import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
+
 import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
 import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
+
 import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
 import com.xoriant.enrollmentapplication.entities.Address;
+
 import com.xoriant.enrollmentapplication.entities.StudentMarks;
 import com.xoriant.enrollmentapplication.entities.User;
 
@@ -32,18 +36,6 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private StudentMarkDao studentMarkDao;
-
-//	@Override
-//	public String login(String email, String password) {
-//		String message = "Invalid userName or Password!";
-//		User user = userDao.findByEmailId(email);
-//		if (user != null) {
-//			if (user.getUserPassword().equals(password) && user.getEmailId().equals(email)) {
-//				message = "Login Successful";
-//			}
-//		}
-//		return message;
-//	}
 
 	@Override
 	public UserResponse register(UserRequest userRequest) {
@@ -189,8 +181,22 @@ public class UserServiceImpl implements UserService {
 		if(user!=null)
 		{
 			UserResponse userResponse=getUserResponse(user);
-			return userResponse;	
+			return userResponse;
 		}
 		return null;
 	}
+
+	@Override
+	public UserResponse updatePassword(int userId, String password) {
+		User user = userDao.findById(userId).orElse(null);
+		if (user != null) {
+			UserResponse userResponse;
+			user.setUserPassword(hashPassword(password));
+			userDao.save(user);
+			userResponse = getUserResponse(user);
+			return userResponse;
+		}
+		return null;
+	}
+
 }

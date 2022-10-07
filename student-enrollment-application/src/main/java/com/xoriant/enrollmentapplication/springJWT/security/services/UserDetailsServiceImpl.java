@@ -14,13 +14,12 @@ import com.xoriant.enrollmentapplication.entities.User;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
   @Autowired
-  UserDao userRepository;
+  UserDao userRepositoryDao;
 
   @Override
   @Transactional
-  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException 
-  {
-    User user = userRepository.findByEmailId(username);
+  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    User user = userRepositoryDao.findByEmailId(username);
     return UserDetailsImpl.build(user);
   }
 }

@@ -7,6 +7,7 @@ public class AddressRequest {
 	private String state;
 	private int pincode;
 	private UserRequest userId;
+	
 	public int getAddressId() {
 		return addressId;
 	}
