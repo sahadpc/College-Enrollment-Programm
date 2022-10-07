@@ -1,10 +1,10 @@
 package com.xoriant.enrollmentapplication.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -17,6 +17,13 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 @Entity(name = "user")
 public class User {
 
@@ -46,7 +53,14 @@ public class User {
 	@JoinColumn(name = "userId", referencedColumnName = "userId")
 	private List<Address> address;
 	
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	public int getUserId() {
 		return userId;
 	}
@@ -119,5 +133,27 @@ public class User {
 		this.address = address;
 	}
 
+<<<<<<< HEAD
 	
+=======
+<<<<<<< HEAD
+	public List<Course> getCourses() {
+		return courses;
+	}
+
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
+
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(
+			name = "user_course",
+			joinColumns = { @JoinColumn(name = "userId")},
+			inverseJoinColumns = { @JoinColumn(name = "courseId")}
+			)
+	private List<Course> courses = new ArrayList<Course>();
+=======
+	
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 }

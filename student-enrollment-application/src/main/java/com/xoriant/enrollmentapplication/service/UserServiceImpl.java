@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xoriant.enrollmentapplication.Repository.AddressDao;
+<<<<<<< HEAD
 
 import com.xoriant.enrollmentapplication.Repository.StudentMarkDao;
 import com.xoriant.enrollmentapplication.Repository.UserDao;
@@ -21,6 +22,29 @@ import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
 import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
 import com.xoriant.enrollmentapplication.entities.Address;
 
+=======
+<<<<<<< HEAD
+import com.xoriant.enrollmentapplication.Repository.StudentMarkDao;
+import com.xoriant.enrollmentapplication.Repository.UserDao;
+import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
+import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
+import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
+import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
+import com.xoriant.enrollmentapplication.entities.Address;
+=======
+
+import com.xoriant.enrollmentapplication.Repository.StudentMarkDao;
+import com.xoriant.enrollmentapplication.Repository.UserDao;
+import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
+
+import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
+import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
+
+import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
+import com.xoriant.enrollmentapplication.entities.Address;
+
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 import com.xoriant.enrollmentapplication.entities.StudentMarks;
 import com.xoriant.enrollmentapplication.entities.User;
 
@@ -36,14 +60,33 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private StudentMarkDao studentMarkDao;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	
+//	@Override
+//	public String login(String email, String password) {
+//		String message = "Invalid userName or Password!";
+//		User user = userDao.findByEmailId(email);
+//		if (user != null) {
+//			if (user.getUserPassword().equals(password) && user.getEmailId().equals(email)) {
+//				message = "Login Successful";
+//			}
+//		}
+//		return message;
+//	}
+=======
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 
 	@Override
 	public UserResponse register(UserRequest userRequest) {
+
 		if (userRequest != null) {
 			User userEntity;
 			UserResponse userResponse;
 			userEntity = getUserEntity(userRequest);
-			userEntity=userDao.save(userEntity);
+			userEntity = userDao.save(userEntity);
 			userResponse = getUserResponse(userEntity);
 			return userResponse;
 		}
@@ -53,7 +96,7 @@ public class UserServiceImpl implements UserService {
 	private UserResponse getUserResponse(User userEntity) {
 
 		UserResponse userResponse = new UserResponse();
-		StudentMarks studentMarks=new StudentMarks();
+		StudentMarks studentMarks = new StudentMarks();
 		userResponse.setUserId(userEntity.getUserId());
 		userResponse.setFirstName(userEntity.getFirstName());
 		userResponse.setMiddleName(userEntity.getMiddleName());
@@ -66,11 +109,12 @@ public class UserServiceImpl implements UserService {
 		userResponse.setAddress(getAddressResponse(userEntity.getAddress()));
 		return userResponse;
 	}
+
 	private List<AddressResponse> getAddressResponse(List<Address> addressResponselist) {
-		List<AddressResponse> addresslist= new ArrayList<AddressResponse>();
-		AddressResponse addressResponse = new AddressResponse();
-		for (Address address : addressResponselist) 
-		{
+		List<AddressResponse> addresslist = new ArrayList<AddressResponse>();
+		
+		for (Address address : addressResponselist) {
+			AddressResponse addressResponse = new AddressResponse();
 			addressResponse.setAddressId(address.getAddressId());
 			addressResponse.setCity(address.getCity());
 			addressResponse.setState(address.getState());
@@ -89,13 +133,14 @@ public class UserServiceImpl implements UserService {
 		userEntity.setLastName(userRequest.getLastName());
 		userEntity.setMobileNumber(userRequest.getMobileNumber());
 		userEntity.setAddress(getAddressEntity(userRequest.getAddress()));
-		
+
 		userEntity.setUserPassword(hashPassword(userRequest.getUserPassword()));
 		userEntity.setEmailId(userRequest.getEmailId());
 		studentmarksEntity.setSscMarks(userRequest.getStudentMarks().getSscMarks());
 		userEntity.setStudentMarks(studentmarksEntity);
 		return userEntity;
 	}
+
 	private List<Address> getAddressEntity(List<AddressRequest> addressRequestlist) {
 		List<Address> addresslist = new ArrayList<Address>();
 		Address addressEntity = new Address();
@@ -119,6 +164,7 @@ public class UserServiceImpl implements UserService {
 		}
 		return null;
 	}
+	
 
 	private User getUpdatedUserEntity(UserRequest userRequest, User user) {
 
@@ -127,7 +173,7 @@ public class UserServiceImpl implements UserService {
 		user.setMiddleName(userRequest.getMiddleName());
 		user.setLastName(userRequest.getLastName());
 		user.setMobileNumber(userRequest.getMobileNumber());
-		//user.setUserPassword(hashPassword(userRequest.getUserPassword()));
+		// user.setUserPassword(hashPassword(userRequest.getUserPassword()));
 		user.setEmailId(userRequest.getEmailId());
 		studentmarksEntity = studentMarkDao.getById(user.getStudentMarks().getMarksId());
 		studentmarksEntity.setSscMarks(userRequest.getStudentMarks().getSscMarks());
@@ -142,7 +188,7 @@ public class UserServiceImpl implements UserService {
 		 */
 		return user;
 	}
-	
+
 	@Override
 	public AddressResponse updateAddress(AddressRequest addressRequest, int userId, int addressId) {
 		Address address = addressDao.findById(addressId).orElse(null);
@@ -159,6 +205,7 @@ public class UserServiceImpl implements UserService {
 		}
 		return null;
 	}
+
 	private String hashPassword(String password) {
 		try {
 			MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -174,9 +221,10 @@ public class UserServiceImpl implements UserService {
 		}
 		return null;
 	}
-	
+
 	@Override
 	public UserResponse getUserByEmail(String email) {
+
 		User user = userDao.findByEmailId(email);
 		if(user!=null)
 		{
@@ -184,6 +232,7 @@ public class UserServiceImpl implements UserService {
 			return userResponse;
 		}
 		return null;
+		
 	}
 
 	@Override
@@ -199,4 +248,76 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	@Override
+	public List<AddressResponse> getUserAddress(int userId) {
+		// Address addressEntity = new Address();
+		List<Address> addressEntity = new ArrayList<Address>();
+		addressEntity = addressDao.findAddressesByUserId(userId);
+		List<AddressResponse> addRes = new ArrayList<AddressResponse>();
+		addRes = getAddressResponse(addressEntity);
+
+		return addRes;
+	}
+	//sahad
+
+	
+	@Override
+	public AddressResponse addAddress(AddressRequest addressRequest, int userId) 
+	{
+		if(addressRequest!=null) {
+			Address addressEntity;
+			AddressResponse addressResponse;
+			addressEntity=getAddressEntity(addressRequest,userId);
+			addressResponse=getAddressResp(addressEntity);
+			return addressResponse;
+			
+			
+		}
+		return null;
+	}
+	//sahad
+	private Address getAddressEntity(AddressRequest addressRequest,int userId) {
+		User user=userDao.getById(userId);
+		Address addressEntity=new Address();
+		addressEntity.setState(addressRequest.getState());
+		addressEntity.setPincode(addressRequest.getPincode());
+		addressEntity.setCity(addressRequest.getCity());
+		addressEntity.setUserId(user);
+		addressDao.save(addressEntity);
+		return addressEntity;
+	}
+	
+	private AddressResponse getAddressResp(Address addressEntity) 
+	{
+		UserResponse userResponse = getUserResponse(addressEntity.getUserId());
+		AddressResponse addressResponse=new AddressResponse();
+		addressResponse.setState(addressEntity.getState());
+		addressResponse.setPincode(addressEntity.getPincode());
+		addressResponse.setCity(addressEntity.getCity());
+		addressResponse.setUserId(userResponse);
+		return addressResponse;
+	}
+
+	@Override
+	public UserResponse changePassword(String CurrentPassword, String password,int userId ) {
+		// TODO Auto-generated method stub
+		User user=userDao.getById(userId);
+		if(user!=null) {
+			
+			UserResponse userResponse;
+			user.setUserPassword(hashPassword(password));
+			userDao.save(user);
+			userResponse = getUserResponse(user);
+			return userResponse;
+			
+			}
+		return null;
+		}
+=======
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 }
+

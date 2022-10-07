@@ -19,11 +19,13 @@ export class UserdashboardserviceService {
       params = params.append('coursename',coursename);
       return this.httpClient.get(`${this.baseUrl}`+'courseRegister',{params:params})
   }
-  changePassword(CurrentPassword:string,password:string):Observable<object>
+  changePassword(CurrentPassword:string,password:string,userId:number):Observable<object>
   {
     let params = new HttpParams();
     params = params.append('CurrentPassword',CurrentPassword);
     params = params.append('password',password);
+    params = params.append('userId',userId);
+    
     return this.httpClient.get(`${this.baseUrl}`+'changePassword',{params:params})
   }
 
