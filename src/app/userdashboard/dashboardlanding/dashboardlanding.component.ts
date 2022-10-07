@@ -16,10 +16,7 @@ export class UserdashboardLandingComponent implements OnInit {
   userDashboard(){
     
   }
-  changePassword()
-  {
-    this.rout.navigate(['/user/changepassword']);
-  }
+
   LogOut(){
     localStorage.removeItem('userToken');
     localStorage.removeItem('das');

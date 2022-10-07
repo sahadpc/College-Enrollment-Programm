@@ -1,29 +1,3 @@
-<!-- <nav class="navbar navbar-dark bg-primary">
-    
-    <div class="fw-bolder align-items-center" style="color: white; text-align: center;">Student Enrollment Application</div>
-    
-    <div class="dropdown">
-            <button class="dropbtn">DashBoard Menu</button>
-            <div class="dropdown-content">
-              <a href="javascript: void(0);">My Profile</a>
-              <a href="javascript: void(0);"(click)="myCourses()">My Courses</a>
-              <a href="javascript: void(0);" (click)="changePassword()">ChangePassword</a>
-              <a href="javascript: void(0);" (click)="LogOut()">Log out</a>
-
-            </div>
-    </div>
-</nav>
-<mat-toolbar color="primary" class="navbar mt-2">
-    
-</mat-toolbar> -->
-<!--
-    <div class="card col-md-6 d-flex align-items-center mt-2 p-4 bg-light shadow">
-    <div>
-        <img src="assets\images\—Pngtree—man avatar with circle frame_8515464.png">
-    </div>
-    Hello User,
-</div>
--->
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-4 mt-4">
@@ -63,7 +37,7 @@
                                 <p class="mb-0">Name of the College</p>
                             </div>
                             <div class="col-sm-9">
-                                <select class="form-select" name="college" id="college">
+                                <select class="form-select" name="college" id="college" [(ngModel)]="user.collegename">
                                     <option value="Indian Institute of Technology, Madras">Indian Institute of
                                         Technology, Madras</option>
                                     <option value="Anna University">Anna University</option>
@@ -80,7 +54,7 @@
                                 <p class="mb-0">Course</p>
                             </div>
                             <div class="col-sm-9">
-                                <select class="form-select" name="courses" id="courses">
+                                <select class="form-select" name="courses" id="courses" [(ngModel)]="user.coursename">
                                     <option value="Core Java">Core Java</option>
                                     <option value="Python">Python</option>
                                     <option value="My Sql">My SQL</option>
@@ -99,5 +73,4 @@
         </div>
     </div>
 </div>
-<router-outlet></router-outlet>
 

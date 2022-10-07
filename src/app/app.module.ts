@@ -21,10 +21,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
-
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 
 @NgModule({
   declarations: [
@@ -33,7 +31,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SignupComponent,
     PagenotfoundComponent,
     ForgetPasswordComponent,
-    ConfirmEqualValidatorDirective,
+    ConfirmEqualValidatorDirective
   ],
   imports: [
     BrowserModule,
