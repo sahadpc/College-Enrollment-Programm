@@ -1,6 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 !SESSION 2022-10-06 11:57:00.851 -----------------------------------------------
 eclipse.buildId=4.25.0.I20220831-1800
 java.version=17.0.4.1
@@ -622,6 +625,9 @@ org.eclipse.core.internal.resources.ResourceException(/student-enrollment-applic
 	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
 	at org.eclipse.lsp4e.LanguageServiceAccessor.getLSWrappers(LanguageServiceAccessor.java:352)
 	at org.eclipse.lsp4e.LanguageServiceAccessor.getLanguageServers(LanguageServiceAccessor.java:610)
+=======
+<<<<<<< HEAD
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 =======
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 !SESSION 2022-10-04 11:21:57.219 -----------------------------------------------
@@ -1679,6 +1685,10 @@ Caused by: java.util.concurrent.CancellationException
 	at java.base/java.util.stream.ReferencePipeline.toArray(ReferencePipeline.java:616)
 	at org.eclipse.lsp4e.LanguageServiceAccessor.getLanguageServers(LanguageServiceAccessor.java:602)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 =======
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
@@ -1697,8 +1707,11 @@ Caused by: java.util.concurrent.CancellationException
 	at org.eclipse.jface.internal.text.codemining.CodeMiningManager.run(CodeMiningManager.java:129)
 	at org.eclipse.jface.text.source.SourceViewer.updateCodeMinings(SourceViewer.java:1313)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	at org.eclipse.jdt.internal.ui.javaeditor.JavaCodeMiningReconciler.reconciled(JavaCodeMiningReconciler.java:51)
 	at org.eclipse.jdt.internal.ui.javaeditor.CompilationUnitEditor.reconciled(CompilationUnitEditor.java:1681)
 	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconciled(JavaReconcilingStrategy.java:228)
@@ -1920,6 +1933,9 @@ org.eclipse.core.internal.resources.ResourceException(/student-enrollment-applic
 	at org.eclipse.lsp4e.DocumentContentSynchronizer.<init>(DocumentContentSynchronizer.java:104)
 	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$14(LanguageServerWrapper.java:649)
 =======
+<<<<<<< HEAD
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+=======
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	at org.springframework.tooling.ls.eclipse.commons.STS4LanguageClientImpl.lambda$9(STS4LanguageClientImpl.java:409)
 	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.lambda$0(ReusableClasspathListenerHandler.java:77)
@@ -1927,12 +1943,15 @@ org.eclipse.core.internal.resources.ResourceException(/student-enrollment-applic
 	at org.springframework.tooling.jdt.ls.commons.classpath.ReusableClasspathListenerHandler$CallbackJob.run(ReusableClasspathListenerHandler.java:77)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-10-04 13:17:58.866
 !MESSAGE Boot LS startup time from start to initialized: 4346ms
 
 !ENTRY org.eclipse.lsp4e 4 0 2022-10-04 13:17:58.869
 =======
+=======
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-10-04 13:17:58.866
 !MESSAGE Boot LS startup time from start to initialized: 4346ms
@@ -7006,6 +7025,9 @@ Caused by: java.io.IOException: The pipe is being closed
 !MESSAGE Boot LS startup time from start to initialized: 4009ms
 
 !ENTRY org.eclipse.lsp4e 4 0 2022-10-04 13:18:02.896
+<<<<<<< HEAD
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+=======
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 !MESSAGE org.eclipse.lsp4j.jsonrpc.JsonRpcException: java.io.IOException: The pipe is being closed
 !STACK 0
@@ -7037,7 +7059,11 @@ Caused by: java.io.IOException: The pipe is being closed
 	... 12 more
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 !ENTRY org.eclipse.lsp4e 4 0 2022-10-04 13:17:58.873
+=======
+!ENTRY org.eclipse.lsp4e 4 0 2022-10-04 13:18:02.898
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 =======
 !ENTRY org.eclipse.lsp4e 4 0 2022-10-04 13:18:02.898
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
@@ -7070,6 +7096,7 @@ Caused by: java.io.IOException: The pipe is being closed
 	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageConsumer.consume(StreamMessageConsumer.java:69)
 	... 12 more
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-10-04 13:17:58.875
 !MESSAGE Entering DelegatingStreamConnectionProvider()
@@ -7675,6 +7702,20 @@ Caused by: java.io.IOException: The pipe is being closed
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-10-04 13:18:06.923
 !MESSAGE Boot LS startup time from start to initialized: 4009ms
 
+=======
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-10-04 13:18:02.904
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-10-04 13:18:02.907
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@502a26b4[org.springframework.tooling.boot.ls:1.29.0.202112031705(id=976)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-10-04 13:18:02.910
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-10-04 13:18:06.923
+!MESSAGE Boot LS startup time from start to initialized: 4009ms
+
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 =======
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-10-04 13:18:02.904
 !MESSAGE Entering DelegatingStreamConnectionProvider()
@@ -10133,6 +10174,10 @@ org.eclipse.e4.core.di.InjectionException: org.eclipse.swt.SWTException: i/o err
 	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
 	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4770)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 =======
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
@@ -10142,13 +10187,19 @@ org.eclipse.e4.core.di.InjectionException: org.eclipse.swt.SWTException: i/o err
 	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:203)
 	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
 <<<<<<< HEAD
+<<<<<<< HEAD
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
 =======
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:228)
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+<<<<<<< HEAD
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+=======
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
 	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:133)
@@ -10156,8 +10207,11 @@ org.eclipse.e4.core.di.InjectionException: org.eclipse.swt.SWTException: i/o err
 	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:44)
 	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	at org.eclipse.ui.internal.services.EvaluationService$1.changed(EvaluationService.java:84)
 	at org.eclipse.e4.core.internal.contexts.TrackableComputationExt.update(TrackableComputationExt.java:105)
 	at org.eclipse.e4.core.internal.contexts.EclipseContext.processScheduled(EclipseContext.java:358)
@@ -10260,6 +10314,9 @@ org.eclipse.e4.core.di.InjectionException: org.eclipse.swt.SWTException: i/o err
 	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
 	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
 =======
+<<<<<<< HEAD
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+=======
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:63)
 	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
@@ -10297,6 +10354,10 @@ org.eclipse.e4.core.di.InjectionException: org.eclipse.swt.SWTException: i/o err
 	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
 	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 =======
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
@@ -10305,9 +10366,12 @@ org.eclipse.e4.core.di.InjectionException: org.eclipse.swt.SWTException: i/o err
 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
 <<<<<<< HEAD
+<<<<<<< HEAD
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
 	at java.base@17.0.4.1/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -10383,6 +10447,9 @@ org.eclipse.jface.text.BadLocationException
 =======
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+<<<<<<< HEAD
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+=======
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -10393,8 +10460,11 @@ org.eclipse.jface.text.BadLocationException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 
 !ENTRY org.eclipse.lsp4e 4 0 2022-10-06 14:31:56.937
 !MESSAGE BadLocationException
@@ -10454,6 +10524,9 @@ org.eclipse.jface.text.BadLocationException
 	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
 	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
 	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+=======
+<<<<<<< HEAD
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 =======
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 Caused by: org.eclipse.swt.SWTException: i/o error (java.io.FileNotFoundException: C:\Users\cheruvampatta_s\AppData\Local\Programs\Git\mingw64\share\git\git-for-windows.ico (The system cannot find the path specified))
@@ -10538,6 +10611,10 @@ org.eclipse.e4.core.di.InjectionException: org.eclipse.swt.SWTException: i/o err
 	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:551)
 	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:156)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 =======
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
@@ -10546,13 +10623,19 @@ org.eclipse.e4.core.di.InjectionException: org.eclipse.swt.SWTException: i/o err
 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
 	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
 <<<<<<< HEAD
+<<<<<<< HEAD
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
 =======
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+<<<<<<< HEAD
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+=======
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -10563,8 +10646,11 @@ org.eclipse.e4.core.di.InjectionException: org.eclipse.swt.SWTException: i/o err
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 
 !ENTRY org.eclipse.lsp4e 4 0 2022-10-06 14:31:56.940
 !MESSAGE BadLocationException
@@ -10828,6 +10914,9 @@ Caused by: java.io.IOException: The pipe is being closed
 
 !ENTRY org.eclipse.lsp4e 2 0 2022-10-06 16:43:02.304
 =======
+<<<<<<< HEAD
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+=======
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 Caused by: org.eclipse.swt.SWTException: i/o error (java.io.FileNotFoundException: C:\Users\cheruvampatta_s\AppData\Local\Programs\Git\mingw64\share\git\git-for-windows.ico (The system cannot find the path specified))
 	at org.eclipse.swt.SWT.error(SWT.java:4893)
@@ -10873,6 +10962,10 @@ Caused by: java.io.FileNotFoundException: C:\Users\cheruvampatta_s\AppData\Local
 
 !ENTRY org.eclipse.lsp4e 2 0 2022-10-04 14:21:29.142
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 =======
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
@@ -10888,8 +10981,11 @@ java.lang.InterruptedException
 	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 !ENTRY org.eclipse.jface 2 0 2022-10-06 17:11:37.292
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2022-10-06 17:11:37.292
@@ -11401,6 +11497,9 @@ java.lang.UnsupportedOperationException: No language server has registered to ha
 	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:148)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 =======
+<<<<<<< HEAD
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+=======
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 !ENTRY org.eclipse.lsp4e 2 0 2022-10-04 14:23:32.169
 !MESSAGE Javadoc unavailable. Failed to obtain it.
@@ -11435,6 +11534,34 @@ Binding(CTRL+SHIFT+C,
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,,system)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+=======
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+
+!ENTRY org.eclipse.lsp4e 2 0 2022-10-07 17:08:36.966
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 2 0 2022-10-07 17:12:09.257
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:386)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)

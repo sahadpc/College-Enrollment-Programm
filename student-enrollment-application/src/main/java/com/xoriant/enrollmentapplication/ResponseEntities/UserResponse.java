@@ -78,6 +78,7 @@ public class UserResponse {
 		this.userPassword = userPassword;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
@@ -101,6 +102,27 @@ public class UserResponse {
 =======
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 
+=======
+	public StudentMarks getStudentMarks() {
+		return studentMarks;
+	}
+	public void setStudentMarks(StudentMarks studentMarks) {
+		this.studentMarks = studentMarks;
+	}
+	public List<AddressResponse> getAddress() {
+		return address;
+	}
+	public void setAddress(List<AddressResponse> address) {
+		this.address = address;
+	}
+	private long mobileNumber;
+	private String emailId;
+	private String userPassword;
+	private StudentMarks studentMarks;
+	private List<AddressResponse> address = new ArrayList<>();
+=======
+
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
 }

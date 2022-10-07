@@ -6,9 +6,6 @@ import java.util.List;
 import com.xoriant.enrollmentapplication.entities.College;
 import com.xoriant.enrollmentapplication.entities.User;
 
-import lombok.Getter;
-import lombok.Setter;
-
 
 public class CourseRequest {
 	

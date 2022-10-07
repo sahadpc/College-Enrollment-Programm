@@ -10,9 +10,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.JoinColumn;
 
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity(name = "course")
 
 public class Course {

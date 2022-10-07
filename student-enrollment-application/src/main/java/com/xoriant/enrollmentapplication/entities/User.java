@@ -18,8 +18,14 @@ import javax.validation.constraints.NotNull;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+
+=======
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+=======
 
 =======
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
@@ -54,9 +60,15 @@ public class User {
 	private List<Address> address;
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
+=======
+
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+=======
 =======
 
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
@@ -134,9 +146,12 @@ public class User {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	public List<Course> getCourses() {
 		return courses;
 	}
@@ -155,5 +170,8 @@ public class User {
 =======
 	
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+<<<<<<< HEAD
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+=======
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 }

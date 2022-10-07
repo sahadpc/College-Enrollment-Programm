@@ -23,6 +23,9 @@ public class UserRequest {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 =======
 >>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	public List<AddressRequest> getAddress() {

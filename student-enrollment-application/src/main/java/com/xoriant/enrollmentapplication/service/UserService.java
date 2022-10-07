@@ -6,9 +6,15 @@ import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
 import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
 import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
+=======
+
+>>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+>>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+=======
 =======
 
 >>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead

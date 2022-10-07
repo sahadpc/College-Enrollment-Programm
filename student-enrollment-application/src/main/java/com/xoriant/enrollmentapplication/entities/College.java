@@ -7,13 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity(name = "college")
 
 public class College {
+	@Id
+	private int collegeId;
+	private String collegeName;
+	private int totalSeats;
+	private int availableSeats;
 	
+	@ManyToMany(mappedBy = "colleges")
+	List<Course> courses = new ArrayList<Course>();
 	public int getCollegeId() {
 		return collegeId;
 	}
@@ -54,12 +59,5 @@ public class College {
 		this.courses = courses;
 	}
 
-	@Id
-	private int collegeId;
-	private String collegeName;
-	private int totalSeats;
-	private int availableSeats;
-	
-	@ManyToMany(mappedBy = "colleges")
-	List<Course> courses = new ArrayList<Course>();
+
 }
