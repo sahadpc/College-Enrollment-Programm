@@ -1,0 +1,18 @@
+<nav class="navbar navbar-dark bg-primary">
+  <div class="fw-bolder align-items-center mx-2" style="color: white; text-align: center;">Student Enrollment Application
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" routerLink="/user/dashboard">DashBoard Menu</button>
+    <div class="dropdown-content">
+      <!-- <a href="/user/dashboard">My Dashboard</a> -->
+      <a href="/user/profile">My Profile</a>
+      <a href="javascript: void(0);">My Courses</a>
+      <a href="javascript: void(0);">ChangePassword</a>
+      <a href="javascript: void(0);" (click)="LogOut()">Log out</a>
+    </div>
+  </div>
+</nav>
+<!-- <mat-toolbar color="primary" class="navbar mt-2">
+</mat-toolbar> -->
+
+<router-outlet></router-outlet>

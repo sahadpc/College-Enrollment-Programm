@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       alert("Login Successfull ");
       this.registerService.datails(this.user.email).subscribe((data:any)=>{
         localStorage.setItem('das',JSON.stringify(data));
-      this.rew.navigate(["userdash"]);
+      this.rew.navigate(["user"]);
       })
    },error=>alert("Invalid Login attempt"))
   }

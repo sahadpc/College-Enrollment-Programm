@@ -1,0 +1,181 @@
+<div class="container-fluid">
+<div class="row">
+    <div class="col-lg-4 mt-4">
+        <div class="card mb-4 bg-light shadow">
+            <div class="card-body text-center">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                    class="rounded-circle img-fluid" style="width: 150px;">
+                <h5 class="my-3">{{sess.firstName}} {{sess.middleName}} {{sess.lastName}}</h5>
+                <p class="text-muted mb-1">Student</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8 mt-4">
+        <div class="card mb-4 bg-light shadow">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">City</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.address[0].city}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">State</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0 ">{{sess.address[0].state}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Pincode</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.address[0].pincode}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Mobile</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.mobileNumber}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">Email</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.emailId}}</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <p class="mb-0">SSC percentage</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <p class="text-muted mb-0">{{sess.studentMarks.sscMarks}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4 mt-4">
+        <!-- <div class="card mb-4 bg-light shadow">
+            <div class="card-body text-center">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+                <h5 class="my-3">{{sess.firstName}} {{sess.middleName}} {{sess.lastName}}</h5>
+                <p class="text-muted mb-1">Student</p>
+            </div>
+        </div> -->
+    </div>
+    <div class="col-lg-8 mt-1">
+        <div class="card mb-4 bg-light shadow">
+            <div class="card-body">
+                <form class="row g-3">
+                    <div class="col-md-2">
+                        <label for="inputCountry" class="form-label">Country</label>
+                        <select class="form-select" placeholder="Country" disabled="true">
+                            <option>India</option>
+                            <!-- <option *ngFor="let country of Countries">{{country.name}}</option> -->
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="inputState" class="form-label">State</label>
+                        <select class="form-select" name="selectState" [(ngModel)]="selectedState"
+                            (change)="changeState($event)">
+                            <option>--Choose State--</option>
+                            <option *ngFor="let state of States">{{state.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="inputCity" class="form-label">City</label>
+                        <select class="form-select" placeholder="City">
+                            <option>--Choose City--</option>
+                            <option *ngFor="let city of cities">{{city}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="inputZip" class="form-label">Pincode</label>
+                        <input type="number" class="form-control" id="inputZip">
+                    </div>
+                    <div class="col-md-3 addressEditButtons">
+                        <button type="submit" class="btn btn-outline-success btn-sm">Save</button>
+                        <button type="submit" class="btn btn-outline-primary btn-sm mx-1">Edit</button>
+                        <button type="submit" class="btn btn-outline-danger btn-sm mx-1">X</button>
+                    </div>
+                </form>
+                <!-- <div class="col-6 addaddressbutton">
+                    <button type="submit" class="btn btn-primary btn-sm">Add Address</button>
+                </div> -->
+            </div>
+            <div class="card-footer text-end">
+                <button class="btn btn-primary btn-sm" (click)="open(content)">Add Address</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-------------------------------------------------ADD ADDRESS MODAL-------------------------------------------------------->
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Add Address</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <label for="inputCountry" class="form-label">Country</label>
+                <select class="form-select" placeholder="Country" disabled="true">
+                    <option>India</option>
+                    <!-- <option *ngFor="let country of Countries">{{country.name}}</option> -->
+                </select>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="inputState" class="form-label">State</label>
+                <select class="form-select" placeholder="State" [(ngModel)]="selectedState"
+                    (change)="changeState($event)" required="true">
+                    <option>--Choose State--</option>
+                    <option *ngFor="let state of States">{{state.name}}</option>
+                </select>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="inputCity" class="form-label">City</label>
+                <select class="form-select" placeholder="City" required="true">
+                    <option>--Choose City--</option>
+                    <option *ngFor="let city of cities">{{city}}</option>
+                </select>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="inputZip" class="form-label">Pincode</label>
+                <input type="number" class="form-control" id="inputZip" required="true">
+            </div>
+            <!-- <input type="submit" class="btn btn-outline-success btn-sm col-12 my-2" value="Add"> -->
+            <!-- <button type="submit" class="btn btn-outline-success btn-sm col-12 my-2">Add</button> -->
+            <!-- <button type="reset" class="btn btn-outline-dark btn-sm col-12">Reset</button> -->
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-outline-primary btn-sm col-3" value="Save">
+                <button type="reset" class="btn btn-outline-dark btn-sm col-3">Reset</button>
+            </div>
+        </form>
+    </div>
+    <!-- <div class="modal-footer">
+        <input type="submit" class="btn btn-outline-primary" value="Save">
+        <button type="reset" class="btn btn-outline-dark">Reset</button>
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div> -->
+</ng-template>
