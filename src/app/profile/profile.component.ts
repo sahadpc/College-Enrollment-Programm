@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-//import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -11,10 +11,15 @@ export class ProfileComponent implements OnInit {
   data:any=localStorage.getItem('das');
   sess:any=JSON.parse(this.data);
 
+  constructor(private rout:Router,private modalService: NgbModal,config: NgbModalConfig) {
+    config.backdrop = 'static';
+    config.keyboard = true;
+  }
 
-  constructor(private rout:Router) { }
+  open(content: any) {
+    this.modalService.open(content);
+  }
 
-  
   ngOnInit(): void {
     
   }

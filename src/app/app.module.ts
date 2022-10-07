@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-//import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -18,11 +18,11 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ConfirmEqualValidatorDirective } from './shared/conform-equal-validatot.directive';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-//import { RouterModule } from '@angular/router';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
-import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,8 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatMenuModule,
     BrowserAnimationsModule,
-    LayoutModule
+    LayoutModule,
+    NgbModule
   ],
   providers: [AuthGuard,
     {

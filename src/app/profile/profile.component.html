@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <div class="row">
     <div class="col-lg-4 mt-4">
         <div class="card mb-4 bg-light shadow">
@@ -81,7 +82,7 @@
             </div>
         </div> -->
     </div>
-    <div class="col-lg-8 mt-4">
+    <div class="col-lg-8 mt-1">
         <div class="card mb-4 bg-light shadow">
             <div class="card-body">
                 <form class="row g-3">
@@ -94,7 +95,8 @@
                     </div>
                     <div class="col-md-3">
                         <label for="inputState" class="form-label">State</label>
-                        <select class="form-select" name="selectState" [(ngModel)]="selectedState" (change)="changeState($event)">
+                        <select class="form-select" name="selectState" [(ngModel)]="selectedState"
+                            (change)="changeState($event)">
                             <option>--Choose State--</option>
                             <option *ngFor="let state of States">{{state.name}}</option>
                         </select>
@@ -121,8 +123,59 @@
                 </div> -->
             </div>
             <div class="card-footer text-end">
-                <button class="btn btn-primary btn-sm" routerLink="/user/addaddress">Add Address</button>
+                <button class="btn btn-primary btn-sm" (click)="open(content)">Add Address</button>
             </div>
         </div>
     </div>
 </div>
+</div>
+
+<!-------------------------------------------------ADD ADDRESS MODAL-------------------------------------------------------->
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Add Address</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <label for="inputCountry" class="form-label">Country</label>
+                <select class="form-select" placeholder="Country" disabled="true">
+                    <option>India</option>
+                    <!-- <option *ngFor="let country of Countries">{{country.name}}</option> -->
+                </select>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="inputState" class="form-label">State</label>
+                <select class="form-select" placeholder="State" [(ngModel)]="selectedState"
+                    (change)="changeState($event)" required="true">
+                    <option>--Choose State--</option>
+                    <option *ngFor="let state of States">{{state.name}}</option>
+                </select>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="inputCity" class="form-label">City</label>
+                <select class="form-select" placeholder="City" required="true">
+                    <option>--Choose City--</option>
+                    <option *ngFor="let city of cities">{{city}}</option>
+                </select>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="inputZip" class="form-label">Pincode</label>
+                <input type="number" class="form-control" id="inputZip" required="true">
+            </div>
+            <!-- <input type="submit" class="btn btn-outline-success btn-sm col-12 my-2" value="Add"> -->
+            <!-- <button type="submit" class="btn btn-outline-success btn-sm col-12 my-2">Add</button> -->
+            <!-- <button type="reset" class="btn btn-outline-dark btn-sm col-12">Reset</button> -->
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-outline-primary btn-sm col-3" value="Save">
+                <button type="reset" class="btn btn-outline-dark btn-sm col-3">Reset</button>
+            </div>
+        </form>
+    </div>
+    <!-- <div class="modal-footer">
+        <input type="submit" class="btn btn-outline-primary" value="Save">
+        <button type="reset" class="btn btn-outline-dark">Reset</button>
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div> -->
+</ng-template>
