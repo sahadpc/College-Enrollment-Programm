@@ -16,20 +16,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
-=======
-
-=======
->>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 @Entity(name = "user")
 public class User {
 
@@ -58,21 +44,14 @@ public class User {
 	@OneToMany (cascade = CascadeType.ALL) 
 	@JoinColumn(name = "userId", referencedColumnName = "userId")
 	private List<Address> address;
-	
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
-=======
-=======
-
->>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(
+			name = "user_course",
+			joinColumns = { @JoinColumn(name = "userId")},
+			inverseJoinColumns = { @JoinColumn(name = "courseId")}
+			)
+	private List<Course> courses = new ArrayList<Course>();
 	public int getUserId() {
 		return userId;
 	}
@@ -145,13 +124,6 @@ public class User {
 		this.address = address;
 	}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	public List<Course> getCourses() {
 		return courses;
 	}
@@ -160,18 +132,4 @@ public class User {
 		this.courses = courses;
 	}
 
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(
-			name = "user_course",
-			joinColumns = { @JoinColumn(name = "userId")},
-			inverseJoinColumns = { @JoinColumn(name = "courseId")}
-			)
-	private List<Course> courses = new ArrayList<Course>();
-=======
-	
->>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
-<<<<<<< HEAD
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
-=======
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 }

@@ -10,7 +10,7 @@ const routes: Routes = [
 {path:'',redirectTo:'login',pathMatch:'full'},
 {path:'login',component:LoginComponent},
 {path:'signup',component:SignupComponent},
-{path:'forget',component:ForgetPasswordComponent,canActivate:[AuthGuard]},
+{path:'forget',component:ForgetPasswordComponent},
 {path: 'user', loadChildren: () => import('./userdashboard/userdashboard.module').then(m => m.UserDashboardModule) },
 {path:'**',component:PagenotfoundComponent},
 ];

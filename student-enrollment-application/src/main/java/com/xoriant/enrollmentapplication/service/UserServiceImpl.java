@@ -10,8 +10,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xoriant.enrollmentapplication.Repository.AddressDao;
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 import com.xoriant.enrollmentapplication.Repository.StudentMarkDao;
 import com.xoriant.enrollmentapplication.Repository.UserDao;
@@ -22,42 +20,6 @@ import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
 
 import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
 import com.xoriant.enrollmentapplication.entities.Address;
-
-=======
-<<<<<<< HEAD
-import com.xoriant.enrollmentapplication.Repository.StudentMarkDao;
-import com.xoriant.enrollmentapplication.Repository.UserDao;
-import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
-import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
-import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
-import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
-import com.xoriant.enrollmentapplication.entities.Address;
-=======
-import com.xoriant.enrollmentapplication.Repository.StudentMarkDao;
-import com.xoriant.enrollmentapplication.Repository.UserDao;
-import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
-import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
-import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
-import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
-import com.xoriant.enrollmentapplication.entities.Address;
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
-=======
-
-import com.xoriant.enrollmentapplication.Repository.StudentMarkDao;
-import com.xoriant.enrollmentapplication.Repository.UserDao;
-import com.xoriant.enrollmentapplication.RequestEntities.AddressRequest;
-
-import com.xoriant.enrollmentapplication.RequestEntities.UserRequest;
-import com.xoriant.enrollmentapplication.ResponseEntities.AddressResponse;
-
-import com.xoriant.enrollmentapplication.ResponseEntities.UserResponse;
-import com.xoriant.enrollmentapplication.entities.Address;
-
->>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
-<<<<<<< HEAD
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
-=======
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 import com.xoriant.enrollmentapplication.entities.StudentMarks;
 import com.xoriant.enrollmentapplication.entities.User;
 
@@ -73,13 +35,7 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private StudentMarkDao studentMarkDao;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
-	
+
 //	@Override
 //	public String login(String email, String password) {
 //		String message = "Invalid userName or Password!";
@@ -91,13 +47,6 @@ public class UserServiceImpl implements UserService {
 //		}
 //		return message;
 //	}
-=======
->>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
-<<<<<<< HEAD
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
-=======
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
-
 	@Override
 	public UserResponse register(UserRequest userRequest) {
 
@@ -267,12 +216,6 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 	@Override
 	public List<AddressResponse> getUserAddress(int userId) {
 		// Address addressEntity = new Address();
@@ -338,11 +281,5 @@ public class UserServiceImpl implements UserService {
 			}
 		return null;
 		}
-=======
->>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
-<<<<<<< HEAD
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
-=======
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
 }
 

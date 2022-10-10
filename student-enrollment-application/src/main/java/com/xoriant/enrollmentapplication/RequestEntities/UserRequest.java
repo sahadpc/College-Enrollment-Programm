@@ -3,8 +3,6 @@ package com.xoriant.enrollmentapplication.RequestEntities;
 import java.util.ArrayList;
 import java.util.List;
 
-import lombok.Getter;
-import lombok.Setter;
 
 
 public class UserRequest {
@@ -20,28 +18,7 @@ public class UserRequest {
 	
 	private List<AddressRequest> address = new ArrayList<>();
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
-=======
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
-	public List<AddressRequest> getAddress() {
-		return address;
-	}
-	public void setAddress(List<AddressRequest> address) {
-		this.address = address;
-	}
-	
-	public StudentMarksRequest getStudentMarks() {
-		return studentMarks;
-	}
-	public void setStudentMarks(StudentMarksRequest studentMarks) {
-		this.studentMarks = studentMarks;
-	}
->>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
+
 	public int getUserId() {
 		return userId;
 	}

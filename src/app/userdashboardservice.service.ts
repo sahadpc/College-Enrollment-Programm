@@ -21,6 +21,7 @@ export class UserdashboardserviceService {
   }
   changePassword(CurrentPassword:string,password:string,userId:number):Observable<object>
   {
+    console.log(userId,CurrentPassword,password);
     let params = new HttpParams();
     params = params.append('CurrentPassword',CurrentPassword);
     params = params.append('password',password);

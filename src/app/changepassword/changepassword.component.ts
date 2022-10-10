@@ -19,9 +19,8 @@ export class ChangepasswordComponent implements OnInit {
  
   changePassword(){
    console.log(this.sess.userId, this.user.CurrentPassword,this.user.password,this.user.confirmpassword);
-   alert("Password Changed Sucessfully");
-   this.userdashboardService.changePassword(this.user.CurrentPassword,this.user.password,this.user.userId).subscribe((data:any)=>{
-    alert("Password Changed Sucessfully");
+   this.userdashboardService.changePassword(this.user.CurrentPassword,this.user.password,this.sess.userId).subscribe((data:any)=>{
+    alert("Password Changed Sucessfully!Try login with new password");
     this.rout.navigate(['login']);
    },error=>alert("try Again!"))
   }

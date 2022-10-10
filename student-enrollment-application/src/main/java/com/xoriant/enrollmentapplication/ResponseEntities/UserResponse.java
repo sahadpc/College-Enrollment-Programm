@@ -5,17 +5,12 @@ import java.util.List;
 
 import com.xoriant.enrollmentapplication.entities.StudentMarks;
 
-
-
-
 public class UserResponse {
 	
 	private int userId;
 	private String firstName;
 	private String middleName;
 	private String lastName;
-<<<<<<< HEAD
-=======
 	private long mobileNumber;
 	private String emailId;
 	private String userPassword;
@@ -34,7 +29,6 @@ public class UserResponse {
 	public void setStudentMarks(StudentMarks studentMarks) {
 		this.studentMarks = studentMarks;
 	}
->>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
 	public int getUserId() {
 		return userId;
 	}
@@ -77,52 +71,5 @@ public class UserResponse {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
-	public StudentMarks getStudentMarks() {
-		return studentMarks;
-	}
-	public void setStudentMarks(StudentMarks studentMarks) {
-		this.studentMarks = studentMarks;
-	}
-	public List<AddressResponse> getAddress() {
-		return address;
-	}
-	public void setAddress(List<AddressResponse> address) {
-		this.address = address;
-	}
-	private long mobileNumber;
-	private String emailId;
-	private String userPassword;
-	private StudentMarks studentMarks;
-	private List<AddressResponse> address = new ArrayList<>();
-=======
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
-
-=======
-	public StudentMarks getStudentMarks() {
-		return studentMarks;
-	}
-	public void setStudentMarks(StudentMarks studentMarks) {
-		this.studentMarks = studentMarks;
-	}
-	public List<AddressResponse> getAddress() {
-		return address;
-	}
-	public void setAddress(List<AddressResponse> address) {
-		this.address = address;
-	}
-	private long mobileNumber;
-	private String emailId;
-	private String userPassword;
-	private StudentMarks studentMarks;
-	private List<AddressResponse> address = new ArrayList<>();
-=======
-
->>>>>>> 6cf8274cf11a794b19d34221c69c944ecfcac65e
-
->>>>>>> 372f855fd7f8a0b45697dc5a441b2833ac574ead
 }
