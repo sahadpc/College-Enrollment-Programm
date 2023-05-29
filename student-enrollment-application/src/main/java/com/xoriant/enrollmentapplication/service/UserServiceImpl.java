@@ -70,8 +70,10 @@ public class UserServiceImpl implements UserService {
 		userResponse.setMiddleName(userEntity.getMiddleName());
 		userResponse.setLastName(userEntity.getLastName());
 		userResponse.setMobileNumber(userEntity.getMobileNumber());
+		userResponse.setUserPassword(userEntity.getUserPassword());
 		userResponse.setEmailId(userEntity.getEmailId());
 		studentMarks.setSscMarks(userEntity.getStudentMarks().getSscMarks());
+		
 		studentMarks.setMarksId(userEntity.getStudentMarks().getMarksId());
 		userResponse.setStudentMarks(studentMarks);
 		userResponse.setAddress(getAddressResponse(userEntity.getAddress()));
@@ -87,6 +89,9 @@ public class UserServiceImpl implements UserService {
 			addressResponse.setCity(address.getCity());
 			addressResponse.setState(address.getState());
 			addressResponse.setPincode(address.getPincode());
+			
+			//addressResponse.getUserId().setUserId(address.getUserId().getUserId());
+			//addressResponse.setUserId(address.getUserId());
 			addresslist.add(addressResponse);
 		}
 		return addresslist;
@@ -160,6 +165,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public AddressResponse updateAddress(AddressRequest addressRequest, int userId, int addressId) {
 		Address address = addressDao.findById(addressId).orElse(null);
+		
 		if (address != null && address.getUserId().getUserId() == userId) {
 			AddressResponse addressResponse = new AddressResponse();
 			address.setCity(addressRequest.getCity());
@@ -281,5 +287,21 @@ public class UserServiceImpl implements UserService {
 			}
 		return null;
 		}
+
+	@Override
+	public boolean deleteAddress(int userId, int addressId) {
+		Address address=addressDao.findById(addressId).orElse(null);
+		boolean isDeleted=false;
+		if(address!=null && address.getUserId().getUserId()==userId) {
+			addressDao.deleteById(addressId);
+			isDeleted=true;
+			
+		}
+		return isDeleted;
+		
+	}
+
+	//getting List of Address
+	
 }
 

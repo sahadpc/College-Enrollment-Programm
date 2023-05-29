@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { RegisterService } from '../register-user.service';
+import { Address } from '../addaddress/Address';
 
 @Component({
   selector: 'app-addaddress',
@@ -10,10 +12,15 @@ import { FormsModule } from '@angular/forms';
 })
 export class AddaddressComponent implements OnInit {
 
-  constructor(private rout:Router,private title: Title) { }
+  address:Address=new Address();
+  data:any=localStorage.getItem('das');
+  sad:any=JSON.parse(this.data);
+  
+  constructor(private rout:Router,private title: Title,private registerService: RegisterService) { }
 
   ngOnInit(): void {
     this.title.setTitle('Add Address');
+   
   }
   selectedState: String = "--Choose State--";
   
@@ -36,4 +43,22 @@ export class AddaddressComponent implements OnInit {
     this.rout.navigate(['login']);
 
   }
+
+  submitAddress(){
+    let postbody={
+      "city":this.address.city,
+      "state":this.address.state,
+      "pincode":this.address.pincode
+
+
+    }
+    console.log(postbody);
+
+    this.registerService.addAddress(postbody,this.sad.userId).subscribe((data:any)=>{
+      alert("address added succesfully")
+    },error=>alert("Address cannot added")
+    
+    
+    )
+}
 }

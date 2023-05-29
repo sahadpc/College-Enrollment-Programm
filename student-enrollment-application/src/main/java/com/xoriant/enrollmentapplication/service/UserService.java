@@ -30,4 +30,8 @@ public interface UserService {
 	
 	public UserResponse changePassword(String CurrentPassword, String password,int userId);
 
+	public boolean deleteAddress(int userId, int addressId);
+
+	
+
 }

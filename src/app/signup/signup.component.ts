@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
       "mobileNumber": this.user.mobile,
       "emailId": this.user.email,
       "userPassword": this.user.password,
-          "studentMarks": {
+      "studentMarks": {
         "sscMarks": this.user.sscpercentage
       },
       "address": [{

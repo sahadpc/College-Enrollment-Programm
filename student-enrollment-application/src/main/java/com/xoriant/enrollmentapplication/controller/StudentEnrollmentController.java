@@ -123,6 +123,15 @@ public class StudentEnrollmentController {
 		return userResponse;
 		
 	}
+	
+	@GetMapping("/deleteAddress")
+	public boolean deleteAddress(@RequestParam("userId") int userId,
+			@RequestParam("addressId") int addressId) {
+		boolean returns=userService.deleteAddress(userId,addressId);
+		return returns;
+	}
+	
+	
 		
 //	@GetMapping("/getCoursesByUserId")
 //	public List<CourseResponse> getCoursesbyUserId(@RequestParam("userId") int userId) {
@@ -138,5 +147,7 @@ public class StudentEnrollmentController {
 //		return null;
 //		
 //	}
+	
+	
 }
 

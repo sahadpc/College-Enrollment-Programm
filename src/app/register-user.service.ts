@@ -2,14 +2,29 @@ import { HttpClient, HttpEvent, HttpHeaders, HttpParams } from '@angular/common/
 import { Injectable } from '@angular/core';
 import { Observable, Observer } from 'rxjs';
 import { User } from './signup/User';
+import { Address } from './addaddress/Address';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
   baseUrl="http://localhost:7079/api/";
+
+  public userId:any;
+  public addressIdd:any;
   
   constructor( private httpClient:HttpClient ) {  }
+
+
+  public userIdd(){
+
+    return this.userId;
+
+  }
+
+  public addressIddd(){
+    return this.addressIdd;
+  }
 
   forgotPassword(email:string):Observable<any>{
     let params = new HttpParams();
@@ -39,4 +54,35 @@ export class RegisterService {
     return this.httpClient.get(`${this.baseUrl}`+'getbyemail',{params:params})
   }
   //,{Headers:new HttpHeaders({'Authorization':'Bearer'+localStorage.getItem('userToken')})}
+  
+  addAddress(address:Object,userId:number):Observable<object>{
+    let params=new HttpParams();
+    params=params.append('userId',userId);
+    return this.httpClient.post(`${this.baseUrl}`+'addAddress',address,{params:params})
+  }
+  //code for add address
+  getAllAddress(userId:number):Observable<object>{
+    let params=new HttpParams();
+    params=params.append('userId',userId);
+    return this.httpClient.get(`${this.baseUrl}`+`getaddress`,{params:params})
+
+  }
+
+  //update address code
+
+  updateAddress(address:object,userId:number,addressId:number):Observable<object>{
+    let params=new HttpParams();
+    params=params.append('userId',userId);
+    params=params.append('addressId',addressId);
+    return this.httpClient.put(`${this.baseUrl}`+`updateaddress`,address,{params:params})
+  }
+
+  //deleting Address
+  deleteAddress(userId:number,addressId:number):Observable<object>{
+    let params=new HttpParams();
+    params=params.append('userId',userId);
+    params=params.append('addressId',addressId)
+    return this,this.httpClient.get(`${this.baseUrl}`+`deleteAddress`,{params:params})
+  }
+
 }
